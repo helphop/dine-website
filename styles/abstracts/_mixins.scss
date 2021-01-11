@@ -1,0 +1,96 @@
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone is where normal styles apply
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+1200 - 1800 is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == tab-port {
+        @media only screen and (min-width: 37.5em) { @content };    //600px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (min-width: 48.1em) { @content };     //900px
+    }
+    @if $breakpoint == desktop {
+        @media only screen and (min-width: 75em) { @content };    //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content };    //1800
+    }
+}
+
+$tones: 10, 20, 30, 40, 50;
+
+
+@mixin defineColorHSL($color, $hue, $saturation, $lightness){
+  #{$color}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");
+  #{$color}-h: #{$hue};
+  #{$color}-s: #{$saturation};
+  #{$color}-l: #{$lightness};
+  @each $tone in $tones {
+    #{$color}-#{$tone}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness * ($tone/100 + 1)})");
+  }
+}
+
+
+@function adjustColor($color, $opacity: 1, $saturationMultiplier: 1, $lightnessMultiplier: 1){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsla($color-h, calc(#{$color-s} * #{$saturationMultiplier}), calc(#{$color-l} * #{$lightnessMultiplier}), $opacity);
+}
+
+
+// return css color variable with different opacity value
+@function alpha($color, $opacity: 1){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsla($color-h, $color-s, $color-l, $opacity);
+}
+
+@function lightness($color, $lightnessMultiplier){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsl($color-h, $color-s, calc(#{$color-l} * #{$lightnessMultiplier}));
+}
+
+@function saturation($color, $saturationMultiplier){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsl($color-h, calc(#{$color-s} * #{$saturationMultiplier}), $color-l);
+}
+
+//need to write a function that incorporates all of the above together so can alter
+//many properties as the same time
+
+// replace substring with another string
+// credits: https://css-tricks.com/snippets/sass/str-replace-function/
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
