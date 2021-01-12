@@ -1,20 +1,27 @@
 :root {
 
-  --clr-marker-primary-100: hsla(27, 22%, 51%);
+  --clr-marker-primary-100: hsl(27, 22%, 51%); //brown bars - brown lines - form icons
   --primary-hue-100: 27; // beaver
 
-  --clr-marker-primary-200: hsla(0, 0, 7%);
+  --clr-marker-primary-200: hsl(0, 0, 7%); //header background - middle dark section - dine info section
   --primary-hue-200: 0; // Cod Gray
 
   --clr-marker-secondary-100: hsla(217, 14%, 42%);
   --secondary-hue-300: 217; // Shuttle Gray
 
-  --clr-marker-secondary-200: hsla(218, 21%, 18%);
+  --clr-marker-secondary-200: hsl(218, 21%, 18%); // text -
   --secondary-hue-200: 218; //Ebony Clay
 
-  --clr-marker-secondary-300: hsla(234, 30%, 13%);
+  --clr-marker-secondary-300: hsl(234, 30%, 13%); //background header image background -
   --secondary-hue-100: 234; //Mirage
 
+
+  --clr-accent-100: hsl(0, 43%, 50%);
+  --clr-accent-100: hsla(0, 43%, 50%, 0.5);
+  --clr-neutral-100: hsl(0, 100%, 100%); // text
+
+  --clr-primary-200-op50: #{adjustHSLA(var(--clr-primary-200), $opacity: 0.5)}; //placeholder text and lines
+  --clr-secondary-100-op7: #{adjustHSLA(var(--clr-secondary-100), $opacity: 0.07)}; //grey background shape
 
 
   @include defineColorHSL(--clr-primary-100, var(--primary-hue-100), 22%, 51%);
@@ -23,17 +30,13 @@
   @include defineColorHSL(--clr-secondary-200, var(--secondary-hue-200), 21%, 18%);
   @include defineColorHSL(--clr-secondary-300, var(--secondary-hue-300), 30%, 13%);
 
-
-
- --clr-neutral-100: hsl(0, 100, 100);
-
-  --box-shadow-100: 2.5rem 2.5rem 8rem #{adjustHSLA(var(--clr-blue-300), $opacity:0.3)};
+  --box-shadow-100: 2.5rem 2.5rem 7rem #{adjustHSLA(var(--clr-primary-200), $opacity: 0.8)};
 
   --br: 3rem;
   --spacer: 1.6rem;
 
-  --ff-primary: 'Public Sans', sans-serif;
-  --ff-secondary: 'DM Serif Display', serif;
+  --ff-primary: 'Spartan', sans-serif;
+
 
   --fs-100: 1.1rem; //form-error-messages
   --fs-200: 1.5rem; //text

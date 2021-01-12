@@ -1,30 +1,31 @@
 /*
 0 - 600px:      Phone is where normal styles apply
-600 - 900px:    Tablet portrait
-900 - 1200px:   Tablet landscape
-1200 - 1800 is where our normal styles apply
-1800px + :      Big desktop
+600 - 1200px:   Tablet
+1200 > :    Desktop
 
 $breakpoint argument choices:
-- phone
-- tab-port
 - tab-land
 - big-desktop
 
-
 1em = 16px
+
 */
 :root {
-  --clr-marker-primary-100: hsla(27, 22%, 51%);
+  --clr-marker-primary-100: hsl(27, 22%, 51%);
   --primary-hue-100: 27;
-  --clr-marker-primary-200: hsla(0, 0, 7%);
+  --clr-marker-primary-200: hsl(0, 0, 7%);
   --primary-hue-200: 0;
   --clr-marker-secondary-100: hsla(217, 14%, 42%);
   --secondary-hue-300: 217;
-  --clr-marker-secondary-200: hsla(218, 21%, 18%);
+  --clr-marker-secondary-200: hsl(218, 21%, 18%);
   --secondary-hue-200: 218;
-  --clr-marker-secondary-300: hsla(234, 30%, 13%);
+  --clr-marker-secondary-300: hsl(234, 30%, 13%);
   --secondary-hue-100: 234;
+  --clr-accent-100: hsl(0, 43%, 50%);
+  --clr-accent-100: hsla(0, 43%, 50%, 0.5);
+  --clr-neutral-100: hsl(0, 100%, 100%);
+  --clr-primary-200-op50: hsla(calc(var(--clr-primary-200-h) * 1), calc(var(--clr-primary-200-s) * 1), calc(var(--clr-primary-200-l) * 1), 0.5);
+  --clr-secondary-100-op7: hsla(calc(var(--clr-secondary-100-h) * 1), calc(var(--clr-secondary-100-s) * 1), calc(var(--clr-secondary-100-l) * 1), 0.07);
   --clr-primary-100: hsl(var(--primary-hue-100), 22%, 51%);
   --clr-primary-100-h: var(--primary-hue-100);
   --clr-primary-100-s: 22%;
@@ -95,12 +96,10 @@ $breakpoint argument choices:
   --clr-secondary-300-s40: hsl(var(--secondary-hue-300), 42%, 13%);
   --clr-secondary-300-l50: hsl(var(--secondary-hue-300), 30%, 19.5%);
   --clr-secondary-300-s50: hsl(var(--secondary-hue-300), 45%, 13%);
-  --clr-neutral-100: hsl(0, 100, 100);
-  --box-shadow-100: 2.5rem 2.5rem 8rem hsla(calc(var(--clr-blue-300-h) * 1), calc(var(--clr-blue-300-s) * 1), calc(var(--clr-blue-300-l) * 1), 0.3);
+  --box-shadow-100: 2.5rem 2.5rem 7rem hsla(calc(var(--clr-primary-200-h) * 1), calc(var(--clr-primary-200-s) * 1), calc(var(--clr-primary-200-l) * 1), 0.8);
   --br: 3rem;
   --spacer: 1.6rem;
-  --ff-primary: 'Public Sans', sans-serif;
-  --ff-secondary: 'DM Serif Display', serif;
+  --ff-primary: 'Spartan', sans-serif;
   --fs-100: 1.1rem;
   --fs-200: 1.5rem;
   --fs-250: 2rem;
@@ -124,7 +123,7 @@ $breakpoint argument choices:
   --lh-800: 1.8;
 }
 
-@media only screen and (min-width: 48.1em) {
+@media only screen and (min-width: 37.5em) {
   :root {
     --fs-500: 4.8rem;
     --fs-600: 4.8rem;
@@ -143,5 +142,5 @@ $breakpoint argument choices:
 }
 
 body {
-  background: var(--clr-secondary-100);
+  background: var(--clr-secondary-100-op7);
 }
