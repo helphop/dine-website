@@ -30,57 +30,27 @@ $breakpoint argument choices:
     }
 }
 
-$tones: 10, 20, 30, 40, 50;
+$colorRanges: 10, 20, 30, 40, 50;
 
 @mixin defineColorHSL($color, $hue, $saturation, $lightness){
   #{$color}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");
   #{$color}-h: #{$hue};
   #{$color}-s: #{$saturation};
   #{$color}-l: #{$lightness};
-  @each $tone in $tones {
-    #{$color}-#{$tone}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness * ($tone/100 + 1)})");
+  @each $colorRange in $colorRanges {
+    #{$color}-l#{$colorRange}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness * ($colorRange/100 + 1)})");
+    #{$color}-s#{$colorRange}: unquote("hsl(#{$hue}, #{$saturation * ($colorRange/100 + 1)}, #{$lightness})");
   }
 }
 
-@function adjustColor($color, $opacity: 1, $saturationMultiplier: 1, $lightnessMultiplier: 1){
+@function adjustHSLA($color, $hMultiplier: 1, $sMultiplier: 1, $lMultiplier: 1, $opacity: 1){
   $color: str-replace($color, 'var(');
   $color: str-replace($color, ')');
   $color-h: var(#{$color+'-h'});
   $color-s: var(#{$color+'-s'});
   $color-l: var(#{$color+'-l'});
-  @return hsla($color-h, calc(#{$color-s} * #{$saturationMultiplier}), calc(#{$color-l} * #{$lightnessMultiplier}), $opacity);
+  @return hsla(calc(#{$color-h} * #{$hMultiplier}), calc(#{$color-s} * #{$sMultiplier}), calc(#{$color-l} * #{$lMultiplier}), $opacity);
 }
-
-// return css color variable with different opacity value
-@function alpha($color, $opacity: 1){
-  $color: str-replace($color, 'var(');
-  $color: str-replace($color, ')');
-  $color-h: var(#{$color+'-h'});
-  $color-s: var(#{$color+'-s'});
-  $color-l: var(#{$color+'-l'});
-  @return hsla($color-h, $color-s, $color-l, $opacity);
-}
-
-@function lightness($color, $lightnessMultiplier){
-  $color: str-replace($color, 'var(');
-  $color: str-replace($color, ')');
-  $color-h: var(#{$color+'-h'});
-  $color-s: var(#{$color+'-s'});
-  $color-l: var(#{$color+'-l'});
-  @return hsl($color-h, $color-s, calc(#{$color-l} * #{$lightnessMultiplier}));
-}
-
-@function saturation($color, $saturationMultiplier){
-  $color: str-replace($color, 'var(');
-  $color: str-replace($color, ')');
-  $color-h: var(#{$color+'-h'});
-  $color-s: var(#{$color+'-s'});
-  $color-l: var(#{$color+'-l'});
-  @return hsl($color-h, calc(#{$color-s} * #{$saturationMultiplier}), $color-l);
-}
-
-//need to write a function that incorporates all of the above together so can alter
-//many properties as the same time
 
 // replace substring with another string
 // credits: https://css-tricks.com/snippets/sass/str-replace-function/

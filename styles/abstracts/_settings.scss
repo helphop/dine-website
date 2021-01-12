@@ -1,19 +1,33 @@
 :root {
 
+  --clr-marker-primary-100: hsla(27, 22%, 51%);
   --primary-hue-100: 27; // beaver
+
+  --clr-marker-primary-200: hsla(0, 0, 7%);
   --primary-hue-200: 0; // Cod Gray
 
-  --secondary-hue-100: 234; //Mirage
-  --secondary-hue-200: 218; //Ebony Clay
+  --clr-marker-secondary-100: hsla(217, 14%, 42%);
   --secondary-hue-300: 217; // Shuttle Gray
 
-  @include defineColorHSL(--clr-primary-100, var(--primary-hue-100), 22%, 51%); // primary button
-  @include defineColorHSL(--clr-primary-200, var(--primary-hue-200), 0%, 7%); // hover color
-  @include defineColorHSL(--clr-secondary-100, var(--secondary-hue-100), 30%, 13%); // hover color
-  @include defineColorHSL(--clr-secondary-200, var(--secondary-hue-200), 21%, 18%); // hover color
-  @include defineColorHSL(--clr-secondary-300, var(--secondary-hue-300), 14%, 42%); // hover color
+  --clr-marker-secondary-200: hsla(218, 21%, 18%);
+  --secondary-hue-200: 218; //Ebony Clay
 
-  --box-shadow-100: 2.5rem 2.5rem 8rem #{alpha(var(--clr-blue-300), 0.3)};
+  --clr-marker-secondary-300: hsla(234, 30%, 13%);
+  --secondary-hue-100: 234; //Mirage
+
+
+
+  @include defineColorHSL(--clr-primary-100, var(--primary-hue-100), 22%, 51%);
+  @include defineColorHSL(--clr-primary-200, var(--primary-hue-200), 0%, 7%);
+  @include defineColorHSL(--clr-secondary-100, var(--secondary-hue-100), 14%, 42%);
+  @include defineColorHSL(--clr-secondary-200, var(--secondary-hue-200), 21%, 18%);
+  @include defineColorHSL(--clr-secondary-300, var(--secondary-hue-300), 30%, 13%);
+
+
+
+ --clr-neutral-100: hsl(0, 100, 100);
+
+  --box-shadow-100: 2.5rem 2.5rem 8rem #{adjustHSLA(var(--clr-blue-300), $opacity:0.3)};
 
   --br: 3rem;
   --spacer: 1.6rem;
