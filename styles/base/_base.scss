@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+  font-family: var(--ff-secondary);
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+input,
+label,
+select,
+button,
+textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  font: inherit;
+}
+
+input:focus {
+  outline: 0;
+}
+
+a {
+  color: inherit;
+  font-family: inherit;
+  display: inline-block;
+  text-decoration: none;
+}
+
+
+
+body {
+    font-size: var(--text-base-size);
+}
+
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.container > * {
+  background-color: var(--bg, var(--clr-neutral-100));
+  color: var(--fg, var(--clr-secondary-200));
+  font-family: var(--ff-primary);
+  font-size: var(--text-base-size);
+  line-height: 1.87;
+  letter-spacing: -0.19;
+  padding: 4rem 2rem;
+  @include respond(tab-land) {
+    line-height: 1.66;
+    letter-spacing: -0.22;
+    padding: 4rem;
+  }
+  @include respond(desktop) {
+    padding: 8rem 14rem;
+  }
+}
+

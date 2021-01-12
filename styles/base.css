@@ -11,13 +11,13 @@ $breakpoint argument choices:
 
 */
 :root {
-  --clr-marker-primary-100: hsl(27, 22%, 51%);
+  --clr-primary-100: hsl(27, 22%, 51%);
   --primary-hue-100: 27;
-  --clr-marker-primary-200: hsl(0, 0, 7%);
+  --clr-primary-200: hsl(0, 0, 7%);
   --primary-hue-200: 0;
-  --clr-marker-secondary-100: hsla(217, 14%, 42%);
+  --clr-secondary-100: hsla(217, 14%, 42%);
   --secondary-hue-300: 217;
-  --clr-marker-secondary-200: hsl(218, 21%, 18%);
+  --clr-secondary-200: hsl(218, 21%, 18%);
   --secondary-hue-200: 218;
   --clr-marker-secondary-300: hsl(234, 30%, 13%);
   --secondary-hue-100: 234;
@@ -99,13 +99,6 @@ $breakpoint argument choices:
   --box-shadow-100: 2.5rem 2.5rem 7rem hsla(calc(var(--clr-primary-200-h) * 1), calc(var(--clr-primary-200-s) * 1), calc(var(--clr-primary-200-l) * 1), 0.8);
   --br: 3rem;
   --spacer: 1.6rem;
-  --ff-primary: 'Spartan', sans-serif;
-  --text-base-size: 0.9375em;
-  --text-scale-ratio: 1.125;
-  --text-unit: var(--text-base-size);
-  --fw-100: 100;
-  --fw-200: 200;
-  --fw-700: 700;
   --space-unit:  1em;
   --space-xxxxs: calc(0.125 * var(--space-unit));
   --space-xxxs:  calc(0.25 * var(--space-unit));
@@ -120,9 +113,24 @@ $breakpoint argument choices:
   --space-xxxxl: calc(13.75 * var(--space-unit));
 }
 
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --ff-primary: 'Spartan', sans-serif;
+  --text-base-size: 0.9375rem;
+  --text-scale-ratio: 1.125;
+  --text-unit: var(--text-base-size);
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-700: 700;
+}
+
 @media only screen and (min-width: 37.5em) {
   :root {
-    --text-base-size: 1.25em;
+    --text-base-size: 1.8rem;
     --text-scale-ratio: 1.25;
   }
 }
@@ -136,6 +144,135 @@ $breakpoint argument choices:
   --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
   --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
   --text-xxxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+}
+
+h1, .h1 {
+  font-size: var(--text-xxxxl);
+  font-weight: var(--fw-300);
+  letter-spacing: -0.8;
+  line-height: 1.125;
+}
+
+h2, .h2 {
+  font-size: var(--text-xxl);
+  font-weight: var(--fw-700);
+  letter-spacing: -0.5;
+  line-height: 1.56;
+}
+
+h3, .h3 {
+  font-size: calc(var(--text-base-size) + 1);
+  font-weight: var(--fw-700);
+  letter-spacing: 2;
+  line-height: 1.56;
+}
+
+@media only screen and (min-width: 37.5em) {
+  h3, .h3 {
+    font-size: var(--text-base-size);
+    font-weight: var(--fw-700);
+    letter-spacing: -.22;
+    line-height: 2;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+  font-family: var(--ff-secondary);
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+input,
+label,
+select,
+button,
+textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  font: inherit;
+}
+
+input:focus {
+  outline: 0;
+}
+
+a {
+  color: inherit;
+  font-family: inherit;
+  display: inline-block;
+  text-decoration: none;
+}
+
+body {
+  font-size: var(--text-base-size);
+}
+
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.container > * {
+  background-color: var(--bg, var(--clr-neutral-100));
+  color: var(--fg, var(--clr-secondary-200));
+  font-family: var(--ff-primary);
+  font-size: var(--text-base-size);
+  line-height: 1.87;
+  letter-spacing: -0.19;
+  padding: 4rem 2rem;
+}
+
+@media only screen and (min-width: 37.5em) {
+  .container > * {
+    line-height: 1.66;
+    letter-spacing: -0.22;
+    padding: 4rem;
+  }
+}
+
+@media only screen and (min-width: 75em) {
+  .container > * {
+    padding: 8rem 14rem;
+  }
 }
 
 body {

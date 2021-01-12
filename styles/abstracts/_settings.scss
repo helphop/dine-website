@@ -1,16 +1,16 @@
 :root {
 
   //colours
-  --clr-marker-primary-100: hsl(27, 22%, 51%); //brown bars - brown lines - form icons
+  --clr-primary-100: hsl(27, 22%, 51%); //brown bars - brown lines - form icons
   --primary-hue-100: 27; // beaver
 
-  --clr-marker-primary-200: hsl(0, 0, 7%); //header background - middle dark section - dine info section
+  --clr-primary-200: hsl(0, 0, 7%); //header background - middle dark section - dine info section
   --primary-hue-200: 0; // Cod Gray
 
-  --clr-marker-secondary-100: hsla(217, 14%, 42%);
+  --clr-secondary-100: hsla(217, 14%, 42%);
   --secondary-hue-300: 217; // Shuttle Gray
 
-  --clr-marker-secondary-200: hsl(218, 21%, 18%); // text -
+  --clr-secondary-200: hsl(218, 21%, 18%); // text -
   --secondary-hue-200: 218; //Ebony Clay
 
   --clr-marker-secondary-300: hsl(234, 30%, 13%); //background header image background -
@@ -37,25 +37,6 @@
   --br: 3rem;
   --spacer: 1.6rem;
 
-
-
-
-  //fonts
-   --ff-primary: 'Spartan', sans-serif;
-
-  --text-base-size: 0.9375em; //1em = 15px
-  --text-scale-ratio: 1.125;
-  --text-unit: var(--text-base-size);
-
-  @include respond (tab-land) {
-    --text-base-size: 1.25em; // 18px
-    --text-scale-ratio: 1.25;
-  }
-
-  --fw-100: 100;
-  --fw-200: 200;
-  --fw-700: 700;
-
   //spacing
   --space-unit:  1em;
   --space-xxxxs: calc(0.125 * var(--space-unit));
@@ -70,16 +51,4 @@
   --space-xxxl:  calc(8.5 * var(--space-unit));
   --space-xxxxl: calc(13.75 * var(--space-unit));
 
-}
-
-:root, * {
-    // type scale
-  --text-xs: calc((var(--text-unit) / var(--text-scale-ratio)) / var(--text-scale-ratio)); // 0.79em 11.85     | 0.64em 11.52px
-  --text-sm: calc(var(--text-xs) * var(--text-scale-ratio)); // 0.889 13.33px| 0.8em 14.40px
-  --text-md: calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio)); // 1.125 16.88px|  1.25em 22.5px
-  --text-lg: calc(var(--text-md) * var(--text-scale-ratio)); // 1.266em 18.98px | 1.563em 28.13px
-  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio)); // 1.424rem 21.36px   | 1.953em 35.16px
-  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio)); // 1.602rem 24.03px |2.441em 43.95px
-  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio)); // 1.802rem 27.03px  | 3.052em 54.93px
-  --text-xxxxl: calc(var(--text-xxl) * var(--text-scale-ratio)); //  2.027rem/ 0.41px | 3.815em 68.66px
 }
