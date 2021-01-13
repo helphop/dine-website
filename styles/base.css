@@ -240,10 +240,6 @@ a {
   text-decoration: none;
 }
 
-body {
-  font-size: var(--text-base-size);
-}
-
 .container {
   max-width: 144rem;
   margin: 0 auto;
