@@ -24,7 +24,7 @@
   --clr-primary-200-op50: #{adjustHSLA(var(--clr-primary-200), $opacity: 0.5)}; //placeholder text and lines
   --clr-secondary-100-op7: #{adjustHSLA(var(--clr-secondary-100), $opacity: 0.07)}; //grey background shape
 
-
+  @include defineColorHSL(--clr-neutral-100, 0, 100%, 100%);
   @include defineColorHSL(--clr-primary-100, var(--primary-hue-100), 22%, 51%);
   @include defineColorHSL(--clr-primary-200, var(--primary-hue-200), 0%, 7%);
   @include defineColorHSL(--clr-secondary-100, var(--secondary-hue-100), 14%, 42%);
