@@ -26,6 +26,20 @@ $breakpoint argument choices:
   --clr-neutral-100: hsl(0, 100%, 100%);
   --clr-primary-200-op50: hsla(calc(var(--clr-primary-200-h) * 1), calc(var(--clr-primary-200-s) * 1), calc(var(--clr-primary-200-l) * 1), 0.5);
   --clr-secondary-100-op7: hsla(calc(var(--clr-secondary-100-h) * 1), calc(var(--clr-secondary-100-s) * 1), calc(var(--clr-secondary-100-l) * 1), 0.07);
+  --clr-neutral-100: hsl(0, 100%, 100%);
+  --clr-neutral-100-h: 0;
+  --clr-neutral-100-s: 100%;
+  --clr-neutral-100-l: 100%;
+  --clr-neutral-100-l10: hsl(0, 100%, 110%);
+  --clr-neutral-100-s10: hsl(0, 110%, 100%);
+  --clr-neutral-100-l20: hsl(0, 100%, 120%);
+  --clr-neutral-100-s20: hsl(0, 120%, 100%);
+  --clr-neutral-100-l30: hsl(0, 100%, 130%);
+  --clr-neutral-100-s30: hsl(0, 130%, 100%);
+  --clr-neutral-100-l40: hsl(0, 100%, 140%);
+  --clr-neutral-100-s40: hsl(0, 140%, 100%);
+  --clr-neutral-100-l50: hsl(0, 100%, 150%);
+  --clr-neutral-100-s50: hsl(0, 150%, 100%);
   --clr-primary-100: hsl(var(--primary-hue-100), 22%, 51%);
   --clr-primary-100-h: var(--primary-hue-100);
   --clr-primary-100-s: 22%;
@@ -156,7 +170,7 @@ h2, .h2 {
   font-size: var(--text-xxl);
   font-weight: var(--fw-700);
   letter-spacing: -0.5;
-  line-height: 1.56;
+  line-height: 1.4;
 }
 
 h3, .h3 {
@@ -423,4 +437,40 @@ a {
   grid-column: 1;
   grid-row: 2;
   align-self: center;
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: 470px 1fr;
+  gap: 10rem;
+}
+
+.highlights__menu-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 5rem;
+  padding: 3rem 0;
+}
+
+.highlights__menu-item .menu__image {
+  position: relative;
+}
+
+.highlights__menu-item .menu__image::after {
+  content: '';
+  height: 1px;
+  width: 3rem;
+  background-color: var(--clr-primary-100);
+  position: absolute;
+  top: 2rem;
+  right: -3rem;
+}
+
+.highlights__menu-item:nth-child(2) {
+  border-bottom: 1px solid hsla(calc(var(--clr-neutral-100-h) * 1), calc(var(--clr-neutral-100-s) * 1), calc(var(--clr-neutral-100-l) * 1), 0.14);
+  border-top: 1px solid hsla(calc(var(--clr-neutral-100-h) * 1), calc(var(--clr-neutral-100-s) * 1), calc(var(--clr-neutral-100-l) * 1), 0.14);
+}
+
+.highlights__menu-item p {
+  font-size: var(--text-sm);
 }

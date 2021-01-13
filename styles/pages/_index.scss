@@ -42,3 +42,43 @@
   }
 }
 
+.highlights {
+
+  display: grid;
+  grid-template-columns: 470px 1fr;
+  gap: 10rem;
+
+  &__menu-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5rem;
+    padding: 3rem 0;
+
+    .menu__image {
+      position: relative;
+      &::after {
+        content: '';
+        height: 1px;
+        width: 3rem;
+        background-color: var(--clr-primary-100);
+        position: absolute;
+        top: 2rem;
+        right: -3rem;
+      }
+    }
+
+    &:nth-child(2) {
+      border-bottom: 1px solid adjustHSLA(var(--clr-neutral-100), $opacity: 0.14);
+      border-top: 1px solid adjustHSLA(var(--clr-neutral-100), $opacity: 0.14);
+    }
+
+    p {
+      font-size: var(--text-sm);
+    }
+
+
+  }
+
+
+
+}
