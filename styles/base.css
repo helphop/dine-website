@@ -265,6 +265,9 @@ h3, .h3 {
 .bg-dark {
   --bg: var(--clr-primary-200);
   --fg: var(--clr-neutral-100);
+  --btn-bd: var(--clr-neutral-100);
+  --btn-bg-hover: var(--clr-neutral-100);
+  --btn-fg-hover: var(--clr-primary-200);
 }
 
 *,
@@ -362,6 +365,18 @@ a {
   }
 }
 
+.btn {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-xl);
+  border: 1px solid var(--btn-bd, var(--clr-primary-200));
+  transition: all .4s ease-in-out;
+}
+
+.btn:hover {
+  background: var(--btn-bg-hover, var(--clr-primary-200));
+  color: var(--btn-fg-hover, var(--clr-neutral-100));
+}
+
 .header {
   background-image: url(../../images/homepage/hero-bg-desktop.jpg);
   background-repeat: no-repeat;
@@ -369,6 +384,7 @@ a {
   background-position: right center;
   display: grid;
   grid-template-columns: 45rem;
+  justify-items: start;
 }
 
 @media (min-resolution: 120dpi) {
@@ -394,7 +410,7 @@ a {
 }
 
 .features > :first-child {
-  margin-top: -25rem;
+  margin-top: -20rem;
 }
 
 .features > .features__image {

@@ -1,0 +1,12 @@
+.btn {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-xl);
+  border: 1px solid var(--btn-bd, var(--clr-primary-200));
+  transition: all .4s ease-in-out;
+}
+
+.btn:hover {
+  background: var(--btn-bg-hover, var(--clr-primary-200));
+  color: var(--btn-fg-hover, var(--clr-neutral-100));
+}
+
