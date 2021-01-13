@@ -98,7 +98,6 @@ $breakpoint argument choices:
   --clr-secondary-300-s50: hsl(var(--secondary-hue-300), 45%, 13%);
   --box-shadow-100: 2.5rem 2.5rem 7rem hsla(calc(var(--clr-primary-200-h) * 1), calc(var(--clr-primary-200-s) * 1), calc(var(--clr-primary-200-l) * 1), 0.8);
   --br: 3rem;
-  --spacer: 1.6rem;
   --space-unit:  1em;
   --space-xxxxs: calc(0.125 * var(--space-unit));
   --space-xxxs:  calc(0.25 * var(--space-unit));
@@ -174,6 +173,98 @@ h3, .h3 {
     letter-spacing: -.22;
     line-height: 2;
   }
+}
+
+.flow-content > * + * {
+  margin-top: var(--space-unit);
+}
+
+.flow-content-small > * + * {
+  margin-top: var(--space-sm);
+}
+
+.flow-content-xsmall > * + * {
+  margin-top: var(--space-xs);
+}
+
+.flow-content-large > * + * {
+  margin-top: var(--space-lg);
+}
+
+.flow-content-xlarge > * + * {
+  margin-top: var(--space-xl);
+}
+
+.split-auto {
+  display: grid;
+  row-gap: var(--row-gap, 2rem);
+  column-gap: var(--column-gap, 2rem);
+  grid-template-columns: repeat(auto-fit, minmax(var(--min), 1fr));
+}
+
+.split-adapt {
+  display: grid;
+  gap: var(--gap, 1rem);
+  grid-auto-flow: column;
+}
+
+.split {
+  display: grid;
+  gap: var(--gap, 1rem);
+  grid-auto-columns: 1fr;
+  grid-auto-flow: row;
+}
+
+@media only screen and (min-width: 37.5em) {
+  .split {
+    grid-auto-flow: column;
+    grid-auto-columns: auto;
+  }
+}
+
+.space-bt {
+  justify-content: space-between;
+}
+
+.justify-ic {
+  justify-items: center;
+}
+
+.justify-cc {
+  justify-content: center;
+}
+
+.align-ic {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.drop-shadow {
+  filter: drop-shadow(var(--box-shadow-100));
+}
+
+.white-filter {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7483%) hue-rotate(25deg) brightness(99%) contrast(108%);
+}
+
+.pink-filter {
+  filter: brightness(0.5) sepia(1) hue-rotate(-70deg) saturate(5);
+}
+
+.navy-filter {
+  filter: brightness(0.2) sepia(1) hue-rotate(180deg) saturate(5);
+}
+
+.blue-filter {
+  filter: brightness(0.5) sepia(1) hue-rotate(140deg) saturate(6);
+}
+
+.bg-dark {
+  --bg: var(--clr-primary-200);
+  --fg: var(--clr-neutral-100);
 }
 
 *,
@@ -267,10 +358,27 @@ a {
 
 @media only screen and (min-width: 75em) {
   .container > * {
-    padding: 8rem 14rem;
+    padding: var(--space-xxxl);
   }
 }
 
-body {
-  background: var(--clr-secondary-100-op7);
+.header {
+  background-image: url(../../images/homepage/hero-bg-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right center;
+  display: grid;
+  grid-template-columns: 45rem;
+}
+
+@media (min-resolution: 120dpi) {
+  .header {
+    background-image: url(../../images/homepage/hero-bg-desktop@2x.jpg);
+  }
+}
+
+.header .logo {
+  position: relative;
+  top: calc(-1 * var(--space-xxl));
+  left: 0;
 }

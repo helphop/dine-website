@@ -84,7 +84,7 @@ a {
     padding: 4rem;
   }
   @include respond(desktop) {
-    padding: 8rem 14rem;
+    padding:  var(--space-xxxl);
   }
 }
 

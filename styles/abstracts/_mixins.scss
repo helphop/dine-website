@@ -20,6 +20,12 @@ $breakpoint argument choices:
     }
 }
 
+@mixin resolution($resolution) {
+  @if $resolution == high {
+    @media (min-resolution: 120dpi) { @content };
+  }
+}
+
 $colorRanges: 10, 20, 30, 40, 50;
 
 @mixin defineColorHSL($color, $hue, $saturation, $lightness){

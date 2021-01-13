@@ -1,3 +1,16 @@
-body {
-  background: var(--clr-secondary-100-op7);
+.header {
+  background-image: url(../../images/homepage/hero-bg-desktop.jpg);
+  @include resolution(high) {
+    background-image: url(../../images/homepage/hero-bg-desktop@2x.jpg);
+  }
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right center;
+  display: grid;
+  grid-template-columns: 45rem;
+  .logo {
+    position: relative;
+    top: calc(-1 * var(--space-xxl));
+    left: 0;
+  }
 }
