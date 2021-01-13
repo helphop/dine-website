@@ -8,9 +8,36 @@
   background-position: right center;
   display: grid;
   grid-template-columns: 45rem;
+
   .logo {
     position: relative;
     top: calc(-1 * var(--space-xxl));
     left: 0;
   }
 }
+
+.features {
+  background-image: url(../../images/patterns/pattern-curve-top-right.svg), url(../../images/patterns/pattern-curve-top-left.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top var(--space-xxxl), right bottom;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  gap: var(--space-xxl);
+  & > :first-child {
+    margin-top: -25rem
+  }
+
+  & > .features__image {
+    margin-bottom: -25rem;
+    display: relative;
+    z-index: 100;
+  }
+
+  & > :last-child {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+  }
+}
+

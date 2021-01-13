@@ -96,7 +96,7 @@ $breakpoint argument choices:
   --clr-secondary-300-s40: hsl(var(--secondary-hue-300), 42%, 13%);
   --clr-secondary-300-l50: hsl(var(--secondary-hue-300), 30%, 19.5%);
   --clr-secondary-300-s50: hsl(var(--secondary-hue-300), 45%, 13%);
-  --box-shadow-100: 2.5rem 2.5rem 7rem hsla(calc(var(--clr-primary-200-h) * 1), calc(var(--clr-primary-200-s) * 1), calc(var(--clr-primary-200-l) * 1), 0.8);
+  --box-shadow-100: 1rem 2rem 7rem hsla(calc(var(--clr-primary-200-h) * 1), calc(var(--clr-primary-200-s) * 1), calc(var(--clr-primary-200-l) * 1), 0.3);
   --br: 3rem;
   --space-unit:  1em;
   --space-xxxxs: calc(0.125 * var(--space-unit));
@@ -381,4 +381,30 @@ a {
   position: relative;
   top: calc(-1 * var(--space-xxl));
   left: 0;
+}
+
+.features {
+  background-image: url(../../images/patterns/pattern-curve-top-right.svg), url(../../images/patterns/pattern-curve-top-left.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top var(--space-xxxl), right bottom;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  gap: var(--space-xxl);
+}
+
+.features > :first-child {
+  margin-top: -25rem;
+}
+
+.features > .features__image {
+  margin-bottom: -25rem;
+  display: relative;
+  z-index: 100;
+}
+
+.features > :last-child {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: center;
 }
