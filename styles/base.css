@@ -476,18 +476,26 @@ a {
 }
 
 .slides {
-  width: 1400px;
   background-image: url(../../images/patterns/pattern-curve-top-right.svg);
   background-repeat: no-repeat;
   background-position: left -36rem top;
-  display: flex;
+  padding-left: 0;
+  padding-right: 0;
+  --grid-width: 140rem;
+  max-width: var(--grid-width);
+  display: grid;
+  grid-auto-flow: column;
   overflow-x: auto;
-  gap: 20rem;
+  justify-items: center;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
 .slides .slide {
-  width: 1200px;
-  flex-shrink: 0;
+  --slide-width: 1400px;
+  width: var(--slide-width);
+  padding: 0 var(--space-xxxl);
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 10rem;
