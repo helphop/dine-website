@@ -392,14 +392,13 @@ body {
   font-size: var(--text-base-size);
   line-height: 1.87;
   letter-spacing: -0.19;
-  padding: 4rem 2rem;
 }
 
 @media only screen and (min-width: 37.5em) {
   .container > * {
     line-height: 1.66;
     letter-spacing: -0.22;
-    padding: 4rem;
+    padding: var(--space-xxxl);
   }
 }
 
@@ -437,8 +436,7 @@ body {
 @media only screen and (min-width: 37.5em) {
   .header {
     background-image: url(../../images/homepage/hero-bg-tablet.jpg);
-    padding-bottom: 20rem;
-    padding-top: 40rem;
+    padding-top: 40%;
     grid-template-columns: minmax(auto, 47rem);
     justify-content: center;
   }
@@ -456,13 +454,13 @@ body {
 @media only screen and (min-width: 75em) {
   .header {
     background-image: url(../../images/homepage/hero-bg-desktop.jpg);
-    grid-template-columns: 47rem;
     justify-content: start;
     justify-items: start;
     text-align: left;
+    padding-top: var(--space-xxxl);
   }
   .header .logo {
-    margin: calc(-1 * var(--space-xxxl)) 0 var(--space-xxxl) 0;
+    margin: calc(-1 * var(--space-xl)) 0 var(--space-xxl) 0;
   }
 }
 
@@ -473,11 +471,14 @@ body {
 }
 
 .features {
+  text-align: center;
   background-image: url(../../images/patterns/pattern-curve-top-right.svg), url(../../images/patterns/pattern-curve-top-left.svg);
   background-repeat: no-repeat, no-repeat;
   background-position: left top var(--space-xxxxl), right bottom;
+  background-size: 50%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+  justify-items: center;
   gap: var(--space-xxl);
 }
 
@@ -485,16 +486,29 @@ body {
   margin-top: -20rem;
 }
 
-.features > .features__image {
-  margin-bottom: -20rem;
-  display: relative;
-  z-index: 100;
+.features__text img {
+  display: inline-block;
 }
 
-.features > :last-child {
-  grid-column: 1;
-  grid-row: 2;
-  align-self: center;
+.features__image {
+  display: inline-block;
+}
+
+@media only screen and (min-width: 75em) {
+  .features {
+    background-size: initial;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+  }
+  .features > :last-child {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+  }
+  .features__image {
+    margin-bottom: -20rem;
+    z-index: 100;
+  }
 }
 
 .highlights {
