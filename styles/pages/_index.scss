@@ -20,17 +20,16 @@
 .features {
   background-image: url(../../images/patterns/pattern-curve-top-right.svg), url(../../images/patterns/pattern-curve-top-left.svg);
   background-repeat: no-repeat, no-repeat;
-  background-position: left top var(--space-xxxl), right bottom;
+  background-position: left top var(--space-xxxxl), right bottom;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-items: start;
   gap: var(--space-xxl);
   & > :first-child {
     margin-top: -20rem
   }
 
   & > .features__image {
-    margin-bottom: -25rem;
+    margin-bottom: -20rem;
     display: relative;
     z-index: 100;
   }
@@ -66,19 +65,60 @@
         right: -3rem;
       }
     }
-
     &:nth-child(2) {
       border-bottom: 1px solid adjustHSLA(var(--clr-neutral-100), $opacity: 0.14);
       border-top: 1px solid adjustHSLA(var(--clr-neutral-100), $opacity: 0.14);
     }
-
     p {
       font-size: var(--text-sm);
     }
-
-
   }
+}
 
+.slides {
+  background-image: url(../../images/patterns/pattern-curve-top-right.svg);
+  background-repeat: no-repeat;
+  background-position: left -36rem top;
+  padding-left: 0;
+  padding-right: 0;
+  //scroll stuff
+  --grid-width: 140rem;
+  max-width: var(--grid-width);
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  justify-items: center;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 
-
+  .slide {
+    --slide-width: 1400px;
+    width: var(--slide-width);
+    padding: 0 var(--space-xxxl);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10rem;
+    align-items: center;
+  &__list {
+    margin-top: var(--space-xxl);
+    color: var( --clr-primary-200-op50);
+    li.active {
+      color: var(--clr-primary-200);
+      position: relative;
+     }
+    li.active::before {
+      content: '';
+      width: 8rem;
+      height: 1px;
+      background: var(--clr-primary-100);
+      top: 1.2rem;
+      left: -10rem;
+      position: absolute;
+     }
+     li a:hover {
+       color: var(--clr-primary-200);
+     }
+    }
+  }
 }

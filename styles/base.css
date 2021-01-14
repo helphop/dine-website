@@ -312,7 +312,6 @@ ul[class],
 ol[class] {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 img {
@@ -383,12 +382,14 @@ a {
   display: inline-block;
   padding: var(--space-sm) var(--space-xl);
   border: 1px solid var(--btn-bd, var(--clr-primary-200));
+  background: var(--bg-btn, var(--clr-primary-200));
+  color: var(--fg-btn, var(--clr-neutral-100));
   transition: all .4s ease-in-out;
 }
 
 .btn:hover {
-  background: var(--btn-bg-hover, var(--clr-primary-200));
-  color: var(--btn-fg-hover, var(--clr-neutral-100));
+  background: var(--btn-bg-hover, var(--clr-neutral-100));
+  color: var(--btn-fg-hover, var(--clr-primary-200));
 }
 
 .header {
@@ -416,10 +417,9 @@ a {
 .features {
   background-image: url(../../images/patterns/pattern-curve-top-right.svg), url(../../images/patterns/pattern-curve-top-left.svg);
   background-repeat: no-repeat, no-repeat;
-  background-position: left top var(--space-xxxl), right bottom;
+  background-position: left top var(--space-xxxxl), right bottom;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-items: start;
   gap: var(--space-xxl);
 }
 
@@ -428,7 +428,7 @@ a {
 }
 
 .features > .features__image {
-  margin-bottom: -25rem;
+  margin-bottom: -20rem;
   display: relative;
   z-index: 100;
 }
@@ -473,4 +473,55 @@ a {
 
 .highlights__menu-item p {
   font-size: var(--text-sm);
+}
+
+.slides {
+  background-image: url(../../images/patterns/pattern-curve-top-right.svg);
+  background-repeat: no-repeat;
+  background-position: left -36rem top;
+  padding-left: 0;
+  padding-right: 0;
+  --grid-width: 140rem;
+  max-width: var(--grid-width);
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  justify-items: center;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.slides .slide {
+  --slide-width: 1400px;
+  width: var(--slide-width);
+  padding: 0 var(--space-xxxl);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10rem;
+  align-items: center;
+}
+
+.slides .slide__list {
+  margin-top: var(--space-xxl);
+  color: var(--clr-primary-200-op50);
+}
+
+.slides .slide__list li.active {
+  color: var(--clr-primary-200);
+  position: relative;
+}
+
+.slides .slide__list li.active::before {
+  content: '';
+  width: 8rem;
+  height: 1px;
+  background: var(--clr-primary-100);
+  top: 1.2rem;
+  left: -10rem;
+  position: absolute;
+}
+
+.slides .slide__list li a:hover {
+  color: var(--clr-primary-200);
 }
