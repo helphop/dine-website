@@ -1,19 +1,32 @@
 .header {
-  background-image: url(../../images/homepage/hero-bg-desktop.jpg);
-  @include resolution(high) {
-    background-image: url(../../images/homepage/hero-bg-desktop@2x.jpg);
-  }
+  background-image: url(../../images/homepage/hero-bg-tablet.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right center;
+  background-size: cover;
+  background-position: top center;
   display: grid;
-  grid-template-columns: 45rem;
-  justify-items: start;
+  grid-template-columns: 1fr;
+   justify-items: center;
+  text-align: center;
 
-  .logo {
-    position: relative;
-    top: calc(-1 * var(--space-xxl));
-    left: 0;
+
+  @include respond(tab-land) {
+    .logo { margin-bottom: 0; }
+    background-image: url(../../images/homepage/hero-bg-tablet.jpg);
+     @include resolution(high) {background-image: url(../../images/homepage/hero-bg-tablet@2x.jpg);}
+    padding-bottom: 20rem;
+    padding-top: 40rem;
+    grid-template-columns: minmax(auto, 47rem);
+    justify-content: center;
+  }
+
+  @include respond(desktop) {
+    .logo { margin: calc(-1 * var(--space-xxxl)) 0 var(--space-xxxl) 0 }
+    background-image: url(../../images/homepage/hero-bg-desktop.jpg);
+    grid-template-columns: 47rem;
+    justify-content: start;
+    justify-items: start;
+    text-align: left;
+    @include resolution(high) {background-image: url(../../images/homepage/hero-bg-desktop@2x.jpg);}
   }
 }
 

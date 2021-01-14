@@ -112,6 +112,7 @@ $breakpoint argument choices:
   --clr-secondary-300-s50: hsl(var(--secondary-hue-300), 45%, 13%);
   --box-shadow-100: 1rem 2rem 7rem hsla(calc(var(--clr-primary-200-h) * 1), calc(var(--clr-primary-200-s) * 1), calc(var(--clr-primary-200-l) * 1), 0.3);
   --br: 3rem;
+  --space-unit-rem: 1.6rem;
   --space-unit:  1em;
   --space-xxxxs: calc(0.125 * var(--space-unit));
   --space-xxxs:  calc(0.25 * var(--space-unit));
@@ -190,23 +191,27 @@ h3, .h3 {
 }
 
 .flow-content > * + * {
-  margin-top: var(--space-unit);
-}
-
-.flow-content-small > * + * {
-  margin-top: var(--space-sm);
+  margin-top: var(--space-unit-rem);
 }
 
 .flow-content-xsmall > * + * {
-  margin-top: var(--space-xs);
+  margin-top: calc(0.5 * var(--space-unit-rem));
+}
+
+.flow-content-small > * + * {
+  margin-top: calc(0.75 * var(--space-unit-rem));
+}
+
+.flow-content-md > * + * {
+  margin-top: calc(1.25 * var(--space-unit-rem));
 }
 
 .flow-content-large > * + * {
-  margin-top: var(--space-lg);
+  margin-top: calc(2 * var(--space-unit-rem));
 }
 
 .flow-content-xlarge > * + * {
-  margin-top: var(--space-xl);
+  margin-top: calc(3.25 * var(--space-unit-rem));
 }
 
 .split-auto {
@@ -419,25 +424,52 @@ body {
 }
 
 .header {
-  background-image: url(../../images/homepage/hero-bg-desktop.jpg);
+  background-image: url(../../images/homepage/hero-bg-tablet.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right center;
+  background-size: cover;
+  background-position: top center;
   display: grid;
-  grid-template-columns: 45rem;
-  justify-items: start;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
 }
 
-@media (min-resolution: 120dpi) {
+@media only screen and (min-width: 37.5em) {
   .header {
-    background-image: url(../../images/homepage/hero-bg-desktop@2x.jpg);
+    background-image: url(../../images/homepage/hero-bg-tablet.jpg);
+    padding-bottom: 20rem;
+    padding-top: 40rem;
+    grid-template-columns: minmax(auto, 47rem);
+    justify-content: center;
+  }
+  .header .logo {
+    margin-bottom: 0;
   }
 }
 
-.header .logo {
-  position: relative;
-  top: calc(-1 * var(--space-xxl));
-  left: 0;
+@media only screen and (min-width: 37.5em) and (min-resolution: 120dpi) {
+  .header {
+    background-image: url(../../images/homepage/hero-bg-tablet@2x.jpg);
+  }
+}
+
+@media only screen and (min-width: 75em) {
+  .header {
+    background-image: url(../../images/homepage/hero-bg-desktop.jpg);
+    grid-template-columns: 47rem;
+    justify-content: start;
+    justify-items: start;
+    text-align: left;
+  }
+  .header .logo {
+    margin: calc(-1 * var(--space-xxxl)) 0 var(--space-xxxl) 0;
+  }
+}
+
+@media only screen and (min-width: 75em) and (min-resolution: 120dpi) {
+  .header {
+    background-image: url(../../images/homepage/hero-bg-desktop@2x.jpg);
+  }
 }
 
 .features {
