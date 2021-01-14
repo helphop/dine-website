@@ -162,14 +162,14 @@ html {
 h1, .h1 {
   font-size: var(--text-xxxxl);
   font-weight: var(--fw-300);
-  letter-spacing: -0.8;
+  letter-spacing: 0.8px;
   line-height: 1.125;
 }
 
 h2, .h2 {
   font-size: var(--text-xxl);
   font-weight: var(--fw-700);
-  letter-spacing: -0.5;
+  letter-spacing: 0.5px;
   line-height: 1.4;
 }
 
@@ -184,7 +184,7 @@ h3, .h3 {
   h3, .h3 {
     font-size: var(--text-base-size);
     font-weight: var(--fw-700);
-    letter-spacing: -.22;
+    letter-spacing: 0.22px;
     line-height: 2;
   }
 }
@@ -345,6 +345,10 @@ a {
   font-family: inherit;
   display: inline-block;
   text-decoration: none;
+}
+
+body {
+  margin: 20rem 0;
 }
 
 .container {
@@ -524,4 +528,24 @@ a {
 
 .slides .slide__list li a:hover {
   color: var(--clr-primary-200);
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background-image: url(../../images/homepage/ready-bg-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: var(--space-xxl);
+  padding-bottom: var(--space-xxl);
+}
+
+.footer {
+  font-size: var(--text-sm);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  padding-top: var(--space-xxl);
+  padding-bottom: var(--space-xxl);
 }
