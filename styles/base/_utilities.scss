@@ -2,13 +2,16 @@
   margin-top: var(--space-unit);
 }
 
+.flow-content-xsmall > * + * {
+  margin-top: var(--space-xs);
+}
 
 .flow-content-small > * + * {
   margin-top: var(--space-sm);
 }
 
-.flow-content-xsmall > * + * {
-  margin-top: var(--space-xs);
+.flow-content-md > * + * {
+    margin-top: var(--space-md);
 }
 
 .flow-content-large > * + * {

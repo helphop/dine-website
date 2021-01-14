@@ -1,19 +1,28 @@
 .header {
-  background-image: url(../../images/homepage/hero-bg-desktop.jpg);
-  @include resolution(high) {
-    background-image: url(../../images/homepage/hero-bg-desktop@2x.jpg);
-  }
+  background-image: url(../../images/homepage/hero-bg-tablet.jpg);
+
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right center;
+  background-size: cover;
+  background-position: top center;
   display: grid;
-  grid-template-columns: 45rem;
+  grid-template-columns: 60rem;
   justify-items: start;
 
-  .logo {
-    position: relative;
-    top: calc(-1 * var(--space-xxl));
-    left: 0;
+  @include respond(tab-land) {
+    background-image: url(../../images/homepage/hero-bg-tablet.jpg);
+     @include resolution(high) {
+      background-image: url(../../images/homepage/hero-bg-tablet@2x.jpg);
+    }
+  }
+
+  @include respond(desktop) {
+      .logo { margin: calc(-1 * var(--space-xxl)) 0 var(--space-lg) 0 }
+    background-image: url(../../images/homepage/hero-bg-desktop.jpg);
+    grid-template-columns: 47rem;
+    justify-items: start;
+    @include resolution(high) {
+    background-image: url(../../images/homepage/hero-bg-desktop@2x.jpg);
+    }
   }
 }
 
