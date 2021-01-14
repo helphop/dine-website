@@ -284,6 +284,28 @@ h3, .h3 {
   --btn-fg-hover: var(--clr-primary-200);
 }
 
+.brown-lines {
+  position: relative;
+}
+
+.brown-lines::after {
+  position: absolute;
+  content: '';
+  width: 20rem;
+  height: 20rem;
+  background: url(../../images/patterns/pattern-lines.svg) no-repeat;
+}
+
+.brown-lines--mr::after {
+  top: 40%;
+  right: -15rem;
+}
+
+.brown-lines--tl::after {
+  top: -3.8rem;
+  left: -5rem;
+}
+
 *,
 *::before,
 *::after {
@@ -497,8 +519,8 @@ body {
 }
 
 .slides .slide {
-  --slide-width: 1400px;
-  width: var(--slide-width);
+  scroll-margin-top: 20rem;
+  width: var(--grid-width);
   padding: 0 var(--space-xxxl);
   display: grid;
   grid-template-columns: auto 1fr;
