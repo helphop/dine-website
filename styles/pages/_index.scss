@@ -3,18 +3,18 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
+  .logo { margin-bottom: 0; }
   display: grid;
   grid-template-columns: 1fr;
-   justify-items: center;
+  justify-items: center;
+  justify-content: center;
   text-align: center;
+  padding-top: 45%;
 
   @include respond(tab-land) {
-    .logo { margin-bottom: 0; }
     background-image: url(../../images/homepage/hero-bg-tablet.jpg);
      @include resolution(high) {background-image: url(../../images/homepage/hero-bg-tablet@2x.jpg);}
-    padding-top: 40%;
     grid-template-columns: minmax(auto, 47rem);
-    justify-content: center;
   }
 
   @include respond(desktop) {
@@ -113,7 +113,7 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   .slide {
-      scroll-margin-top: 20rem; //critical for making sure the slide is in the middle of the screen
+    scroll-margin-top: 20rem; //critical for making sure the slide is in the middle of the screen
     width: var(--grid-width);
     padding: 0 var(--space-xxxl);
     display: grid;

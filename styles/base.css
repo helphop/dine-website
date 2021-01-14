@@ -372,6 +372,7 @@ a {
   font-family: inherit;
   display: inline-block;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 body {
@@ -430,18 +431,19 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
+  justify-content: center;
   text-align: center;
+  padding-top: 45%;
+}
+
+.header .logo {
+  margin-bottom: 0;
 }
 
 @media only screen and (min-width: 37.5em) {
   .header {
     background-image: url(../../images/homepage/hero-bg-tablet.jpg);
-    padding-top: 40%;
     grid-template-columns: minmax(auto, 47rem);
-    justify-content: center;
-  }
-  .header .logo {
-    margin-bottom: 0;
   }
 }
 
