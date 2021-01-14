@@ -122,3 +122,23 @@
     }
   }
 }
+
+.cta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background-image: url(../../images/homepage/ready-bg-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: var(--space-xxl);
+  padding-bottom: var(--space-xxl);
+}
+
+.footer {
+  font-size: var(--text-sm);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  padding-top: var(--space-xxl);
+  padding-bottom: var(--space-xxl);
+}
