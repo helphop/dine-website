@@ -3,54 +3,62 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
+  .logo { margin-bottom: 0; }
   display: grid;
   grid-template-columns: 1fr;
-   justify-items: center;
+  justify-items: center;
+  justify-content: center;
   text-align: center;
-
+  padding-top: 45%;
 
   @include respond(tab-land) {
-    .logo { margin-bottom: 0; }
     background-image: url(../../images/homepage/hero-bg-tablet.jpg);
      @include resolution(high) {background-image: url(../../images/homepage/hero-bg-tablet@2x.jpg);}
-    padding-bottom: 20rem;
-    padding-top: 40rem;
     grid-template-columns: minmax(auto, 47rem);
-    justify-content: center;
   }
 
   @include respond(desktop) {
-    .logo { margin: calc(-1 * var(--space-xxxl)) 0 var(--space-xxxl) 0 }
+    .logo { margin: calc(-1 * var(--space-xl)) 0 var(--space-xxl) 0 }
     background-image: url(../../images/homepage/hero-bg-desktop.jpg);
-    grid-template-columns: 47rem;
     justify-content: start;
     justify-items: start;
     text-align: left;
+    padding-top: var(--space-xxxl);
     @include resolution(high) {background-image: url(../../images/homepage/hero-bg-desktop@2x.jpg);}
   }
 }
 
 .features {
+  text-align: center;
   background-image: url(../../images/patterns/pattern-curve-top-right.svg), url(../../images/patterns/pattern-curve-top-left.svg);
   background-repeat: no-repeat, no-repeat;
   background-position: left top var(--space-xxxxl), right bottom;
+  background-size: 50%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+    justify-items: center;
   gap: var(--space-xxl);
   & > :first-child {
     margin-top: -20rem
   }
 
-  & > .features__image {
-    margin-bottom: -20rem;
-    display: relative;
-    z-index: 100;
-  }
+  &__text img { display: inline-block;}
 
-  & > :last-child {
-    grid-column: 1;
-    grid-row: 2;
-    align-self: center;
+  &__image { display: inline-block;}
+
+  @include respond(desktop) {
+    background-size: initial;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+    & > :last-child {
+     grid-column: 1;
+     grid-row: 2;
+     align-self: center;
+    }
+    &__image {
+      margin-bottom: -20rem;
+      z-index: 100;
+    }
   }
 }
 
@@ -105,7 +113,7 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   .slide {
-      scroll-margin-top: 20rem; //critical for making sure the slide is in the middle of the screen
+    scroll-margin-top: 20rem; //critical for making sure the slide is in the middle of the screen
     width: var(--grid-width);
     padding: 0 var(--space-xxxl);
     display: grid;

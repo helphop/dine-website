@@ -59,6 +59,7 @@ a {
   font-family: inherit;
   display: inline-block;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 body {
@@ -79,11 +80,10 @@ body {
   font-size: var(--text-base-size);
   line-height: 1.87;
   letter-spacing: -0.19;
-  padding: 4rem 2rem;
   @include respond(tab-land) {
     line-height: 1.66;
     letter-spacing: -0.22;
-    padding: 4rem;
+    padding:  var(--space-xxxl);
   }
   @include respond(desktop) {
     padding:  var(--space-xxxl);
