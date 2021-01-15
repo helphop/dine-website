@@ -111,7 +111,12 @@
     top: 40%;
     right: -15rem;
   }
+
   .brown-lines--tl::after {
     top: -3.8rem;
     left: -5rem;
+  }
+
+  .inline-block {
+    display: inline-block;
   }

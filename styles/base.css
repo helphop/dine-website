@@ -311,6 +311,10 @@ h3, .h3 {
   left: -5rem;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 *,
 *::before,
 *::after {
@@ -488,14 +492,6 @@ body {
   margin-top: -20rem;
 }
 
-.features__text img {
-  display: inline-block;
-}
-
-.features__image {
-  display: inline-block;
-}
-
 @media only screen and (min-width: 75em) {
   .features {
     background-size: initial;
@@ -515,8 +511,21 @@ body {
 
 .highlights {
   display: grid;
-  grid-template-columns: 470px 1fr;
-  gap: 10rem;
+  grid-template-columns: 1fr;
+  gap: 5rem;
+}
+
+@media only screen and (min-width: 75em) {
+  .highlights {
+    grid-template-columns: 470px 1fr;
+    gap: 10rem;
+  }
+}
+
+.highlights__intro {
+  max-width: 47rem;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .highlights__menu-item {
