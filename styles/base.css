@@ -575,18 +575,23 @@ body {
 }
 
 .slides .slide {
+  scroll-snap-align: center center;
   scroll-margin-top: 20rem;
   padding: 0 var(--space-xxxl);
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12rem;
-  align-items: center;
+  align-items: start;
+  align-content: start;
+  text-align: center;
+  row-gap: 4rem;
 }
 
 @media only screen and (min-width: 37.5em) {
   .slides .slide {
-    padding: 0 var(--space-xl);
-    min-width: 120rem;
+    padding: 0 var(--space-xxl);
+    width: 100rem;
+    justify-items: center;
+    justify-content: center;
   }
 }
 
@@ -595,6 +600,9 @@ body {
     padding: 0 var(--space-xxxl);
     width: 140rem;
     grid-template-columns: auto 1fr;
+    align-items: center;
+    text-align: left;
+    gap: 12rem;
   }
 }
 

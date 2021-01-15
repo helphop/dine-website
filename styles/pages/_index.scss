@@ -121,22 +121,31 @@
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+
   .slide {
+    scroll-snap-align: center center;
     scroll-margin-top: 20rem; //critical for making sure the slide is in the middle of the screen
     padding: 0 var(--space-xxxl);
     display: grid;
      grid-template-columns: 1fr;
-     gap: 12rem;
-    align-items: center;
+     align-items: start;
+     align-content: start;
+    text-align: center;
+    row-gap: 4rem;
 
     @include respond(tab-land) {
-      padding: 0 var(--space-xl);
-      min-width: 120rem;
+      padding: 0 var(--space-xxl);
+      width: 100rem;
+      justify-items: center;
+      justify-content: center;
     }
     @include respond(desktop) {
      padding: 0 var(--space-xxxl);
      width: 140rem;
-     grid-template-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+     align-items: center;
+     text-align: left;
+      gap: 12rem;
     }
   &__img {
     --br-line-top: -5rem;
