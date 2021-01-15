@@ -542,7 +542,7 @@ body {
 .slides {
   background-image: url(../../images/patterns/pattern-curve-top-right.svg);
   background-repeat: no-repeat;
-  background-position: left -55% top;
+  background-position: left -40rem top;
 }
 
 .slides__container {
@@ -573,15 +573,10 @@ body {
   grid-template-columns: 1fr;
   align-items: start;
   align-content: start;
+  justify-items: center;
   text-align: center;
   row-gap: 4rem;
   width: var(--grid-width);
-  padding: var(--space-xl);
-}
-@media only screen and (min-width: 37.5em) {
-  .slides__container .slide {
-    justify-items: center;
-  }
 }
 @media only screen and (min-width: 75em) {
   .slides__container .slide {
@@ -589,8 +584,11 @@ body {
     align-items: center;
     text-align: left;
     gap: 12rem;
-    padding: var(--space-xl) 0;
+    padding: 5rem;
   }
+}
+.slides__container .slide__info p {
+  max-width: 30ch;
 }
 .slides__container .slide__img {
   --br-line-top: -5rem;
