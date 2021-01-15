@@ -110,7 +110,7 @@ $breakpoint argument choices:
   --clr-secondary-300-s40: hsl(var(--secondary-hue-300), 42%, 13%);
   --clr-secondary-300-l50: hsl(var(--secondary-hue-300), 30%, 19.5%);
   --clr-secondary-300-s50: hsl(var(--secondary-hue-300), 45%, 13%);
-  --box-shadow-100: 0 2rem 4rem hsla(calc(var(--clr-primary-200-h) * 1), calc(var(--clr-primary-200-s) * 1), calc(var(--clr-primary-200-l) * 1), 0.3);
+  --box-shadow-100: 1rem 3rem 4rem -2rem hsla(calc(var(--clr-primary-200-h) * 1), calc(var(--clr-primary-200-s) * 1), calc(var(--clr-primary-200-l) * 1), 0.3);
   --br: 3rem;
   --space-unit-rem: 1.6rem;
   --space-unit:  1em;
@@ -305,6 +305,10 @@ h3, .h3 {
 
 .inline-block {
   display: inline-block;
+}
+
+.box-shadow {
+  box-shadow: var(--box-shadow-100);
 }
 
 *,
@@ -509,17 +513,20 @@ body {
   gap: 5rem;
 }
 
+.highlights__intro {
+  max-width: 47rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
 @media only screen and (min-width: 75em) {
   .highlights {
     grid-template-columns: 470px 1fr;
     gap: 10rem;
   }
-}
-
-.highlights__intro {
-  max-width: 47rem;
-  margin: 0 auto;
-  text-align: center;
+  .highlights__intro {
+    text-align: left;
+  }
 }
 
 .highlights__menu-item {
@@ -561,6 +568,7 @@ body {
   display: grid;
   grid-auto-flow: column;
   overflow-x: auto;
+  gap: 20rem;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -568,12 +576,26 @@ body {
 
 .slides .slide {
   scroll-margin-top: 20rem;
-  width: 140rem;
   padding: 0 var(--space-xxxl);
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 10rem;
+  grid-template-columns: 1fr;
+  gap: 12rem;
   align-items: center;
+}
+
+@media only screen and (min-width: 37.5em) {
+  .slides .slide {
+    padding: 0 var(--space-xl);
+    min-width: 120rem;
+  }
+}
+
+@media only screen and (min-width: 75em) {
+  .slides .slide {
+    padding: 0 var(--space-xxxl);
+    width: 140rem;
+    grid-template-columns: auto 1fr;
+  }
 }
 
 .slides .slide__img {
