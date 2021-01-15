@@ -558,12 +558,9 @@ body {
   background-position: left -36rem top;
   padding-left: 0;
   padding-right: 0;
-  --grid-width: 140rem;
-  max-width: var(--grid-width);
   display: grid;
   grid-auto-flow: column;
   overflow-x: auto;
-  justify-items: center;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -571,7 +568,7 @@ body {
 
 .slides .slide {
   scroll-margin-top: 20rem;
-  width: var(--grid-width);
+  width: 140rem;
   padding: 0 var(--space-xxxl);
   display: grid;
   grid-template-columns: auto 1fr;
