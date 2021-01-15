@@ -83,7 +83,7 @@ body {
   @include respond(tab-land) {
     line-height: 1.66;
     letter-spacing: -0.22;
-    padding:  var(--space-xxxl);
+    padding:  var(--space-xxl);
   }
   @include respond(desktop) {
     padding:  var(--space-xxxl);

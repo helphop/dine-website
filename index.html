@@ -93,7 +93,7 @@ Our menu is revamped every season.</p>
             <div class="menu__image">
               <picture>
                 <source media="(min-width: 37.5em)" srcset="images/homepage/chocolate-desktop-tablet.jpg 1x, images/homepage/chocolate-desktop-tablet@2x.jpg 2x">
-               <img class="bg-line" src="images/homepage/chocolate-desktop-tablet.jpg" srcset="<img class="bg-line" src="images/homepage/chocolate-mobile@2x.jpg 2x" alt="chocolate mousse">
+               <img class="bg-line" src="images/homepage/chocolate-desktop-tablet.jpg" srcset="images/homepage/chocolate-mobile@2x.jpg 2x" alt="chocolate mousse">
               </picture>
             </div>
             <div class="menu__desc">
@@ -105,52 +105,77 @@ Our menu is revamped every season.</p>
       </section>
 
       <section class="slides">
-        <div class="slide" id="slide-family">
-          <div class="slide__img brown-lines"><img class="drop-shadow" src="images/homepage/family-gathering-desktop.jpg" alt="family eating together"></div>
-          <div class="slide__info flow-content-large">
-            <h2>Family Gathering</h2>
-            <p> We love catering for entire families. So please bring everyone along for a special meal with your
-  loved ones. We’ll provide a memorable experience for all.</p>
-            <a href="" class="btn">Book A Table</a>
-            <ul class="slide__list flow-content-small">
-              <li class="active"><a href="#slide-family" id="family">Family Gatherings</a></li>
-              <li><a href="#slide-special" id="special">Special Events</a></li>
-              <li><a href="#slide-social" id="social">Social Events</a></li>
-            </ul>
+        <div class="slides__container">
+          <div class="slide" id="slide-family">
+            <div class="slide__img">
+              <picture>
+                <source media="(min-width: 75em)" srcset="images/homepage/family-gathering-desktop.jpg 1x, images/homepage/family-gathering-desktop@2x.jpg 2x">
+                  <source media="(min-width: 37.5em)" srcset="images/homepage/family-gathering-tablet.jpg 1x, images/homepage/family-gathering-tablet@2x.jpg 2x">
+                <img class="box-shadow" src="images/homepage/family-gathering-mobile.jpg" srcset="images/homepage/family-gathering-mobile@2x.jpg 2x" alt="family eating together">
+              </picture>
+            </div>
+            <div class="slide__info flow-content-large">
+              <h2>Family Gathering</h2>
+              <p>We love catering for entire families. So please bring everyone along for a special meal with your
+    loved ones. We’ll provide a memorable experience for all.</p>
+              <a href="" class="btn">Book A Table</a>
+              <ul class="slide__list flow-content-small">
+                <li class="active"><a href="#slide-family" id="family">Family Gatherings</a></li>
+                <li><a href="#slide-special" id="special">Special Events</a></li>
+                <li><a href="#slide-social" id="social">Social Events</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="slide" id="slide-special">
+            <div class="slide__img">
+              <picture>
+                <source media="(min-width: 75em)"
+                  srcset="images/homepage/special-events-desktop.jpg 1x, images/homepage/special-events-desktop@2x.jpg 2x">
+                <source media="(min-width: 37.5em)"
+                  srcset="images/homepage/special-events-tablet.jpg 1x, images/homepage/special-events-tablet@2x.jpg 2x">
+                <img class="box-shadow" src="images/homepage/special-events-mobile.jpg"
+                  srcset="images/homepage/special-events-mobile@2x.jpg 2x" alt="family eating together">
+              </picture>
+            </div>
+            <div class="slide__info flow-content-large">
+              <h2>Special Events</h2>
+              <p>Whether it’s a romantic dinner or special date you’re celebrating with others we’ll look after you.
+              We’ll be sure to mark your special date with an unforgettable meal..</p>
+              <a href="" class="btn btn-dark">Book A Table</a>
+              <ul class="slide__list flow-content-small">
+                <li><a href="#slide-family" id="family" >Family Gatherings</a></li>
+                <li class="active"><a href="#slide-special" id="special" >Special Events</a></li>
+                <li><a href="#slide-social" id="social" >Social Events</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="slide" id="slide-social">
+            <div class="slide__img">
+              <picture>
+                <source media="(min-width: 75em)"
+                  srcset="images/homepage/social-events-desktop.jpg 1x, images/homepage/social-events-desktop@2x.jpg 2x">
+                <source media="(min-width: 37.5em)"
+                  srcset="images/homepage/social-events-tablet.jpg 1x, images/homepage/social-events-tablet@2x.jpg 2x">
+                <img class="box-shadow" src="images/homepage/social-events-mobile.jpg"
+                  srcset="images/homepage/social-events-mobile@2x.jpg 2x" alt="family eating together">
+              </picture>
+            </div>
+            <div class="slide__info flow-content-large">
+              <h2>Social Events</h2>
+              <p>Are you looking to have a larger social event? No problem! We’re more than happy to cater for big
+              parties. We’ll work with you to make your event a hit with everyone..</p>
+              <a href="" class="btn btn-dark">Book A Table</a>
+              <ul class="slide__list flow-content-small">
+                <li><a href="#slide-family" id="family">Family Gatherings</a></li>
+                <li><a href="#slide-special" id="special">Special Events</a></li>
+                <li class="active"><a href="#slide-social" id="social">Social Events</a></li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div class="slide" id="slide-special">
-          <div class="slide__img brown-lines brown-lines--tl"><img class="drop-shadow" src="images/homepage/special-events-desktop.jpg"
-              alt="family eating together"></div>
-          <div class="slide__info flow-content-large">
-            <h2>Special Events</h2>
-            <p>Whether it’s a romantic dinner or special date you’re celebrating with others we’ll look after you.
-            We’ll be sure to mark your special date with an unforgettable meal..</p>
-            <a href="" class="btn btn-dark">Book A Table</a>
-            <ul class="slide__list flow-content-small">
-              <li><a href="#slide-family" id="family" >Family Gatherings</a></li>
-              <li class="active"><a href="#slide-special" id="special" >Special Events</a></li>
-              <li><a href="#slide-social" id="social" >Social Events</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="slide" id="slide-social">
-          <div class="slide__img brown-lines brown-lines--tl"><img class="drop-shadow" src="images/homepage/social-events-desktop.jpg"
-              alt="family eating together"></div>
-          <div class="slide__info flow-content-large">
-            <h2>Social Events</h2>
-            <p>Are you looking to have a larger social event? No problem! We’re more than happy to cater for big
-            parties. We’ll work with you to make your event a hit with everyone..</p>
-            <a href="" class="btn btn-dark">Book A Table</a>
-            <ul class="slide__list flow-content-small">
-              <li><a href="#slide-family" id="family">Family Gatherings</a></li>
-              <li><a href="#slide-special" id="special">Special Events</a></li>
-              <li class="active"><a href="#slide-social" id="social">Social Events</a></li>
-            </ul>
-          </div>
-        </div>
 
       </section>
 
