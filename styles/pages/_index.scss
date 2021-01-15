@@ -52,6 +52,8 @@
     &__image {
       margin-bottom: -20rem;
       z-index: 100;
+      --br-line-left: 90%;
+      --br-line-top: 40%;
     }
   }
 }
@@ -124,6 +126,10 @@
     grid-template-columns: auto 1fr;
     gap: 10rem;
     align-items: center;
+  &__img {
+    --br-line-top: -5rem;
+    --br-line-left: -5rem;
+  }
   &__list {
     margin-top: var(--space-xxl);
     color: var( --clr-primary-200-op50);

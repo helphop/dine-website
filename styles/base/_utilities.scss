@@ -97,7 +97,7 @@
   --btn-fg-hover: var(--clr-primary-200);
 }
 
-  .brown-lines {
+  *.brown-lines {
     position: relative;
     &::after {
       position: absolute;
@@ -105,16 +105,9 @@
       width: 20rem;
       height: 20rem;
       background: url(../../images/patterns/pattern-lines.svg) no-repeat;
+      top: var(--br-line-top, 0);
+      left: var(--br-line-left, 0);
     }
-  }
-  .brown-lines--mr::after {
-    top: 40%;
-    right: -15rem;
-  }
-
-  .brown-lines--tl::after {
-    top: -3.8rem;
-    left: -5rem;
   }
 
   .inline-block {
