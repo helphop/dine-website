@@ -38,13 +38,7 @@
   grid-template-columns: 1fr;
     justify-items: center;
   gap: var(--space-xxl);
-  & > :first-child {
-    margin-top: -20rem
-  }
-
-  &__text img { display: inline-block;}
-
-  &__image { display: inline-block;}
+  & > :first-child {margin-top: -20rem }
 
   @include respond(desktop) {
     background-size: initial;
@@ -63,10 +57,20 @@
 }
 
 .highlights {
-
   display: grid;
-  grid-template-columns: 470px 1fr;
-  gap: 10rem;
+  grid-template-columns: 1fr;
+  gap: 5rem;
+
+  @include respond(desktop) {
+    grid-template-columns: 470px 1fr;
+    gap: 10rem;
+  }
+
+  &__intro {
+    max-width: 47rem;
+    margin: 0 auto;
+    text-align: center;
+  }
 
   &__menu-item {
     display: grid;
