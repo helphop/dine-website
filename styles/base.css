@@ -428,6 +428,19 @@ body {
   color: var(--btn-fg-hover, var(--clr-primary-200));
 }
 
+*.brown-lines {
+  position: relative;
+}
+*.brown-lines::after {
+  position: absolute;
+  content: "";
+  width: 20rem;
+  height: 20rem;
+  background: url(../../images/patterns/pattern-lines.svg) no-repeat;
+  top: var(--br-line-top, 0);
+  left: var(--br-line-left, 0);
+}
+
 .header {
   background-image: url(../../images/homepage/hero-bg-tablet.jpg);
   background-repeat: no-repeat;
