@@ -35,13 +35,23 @@
   text-align: center;
   background-image: url(../../images/patterns/pattern-curve-top-right.svg), url(../../images/patterns/pattern-curve-top-left.svg);
   background-repeat: no-repeat, no-repeat;
-  background-position: left top var(--space-xxxxl), right bottom;
+  background-position: left 200rem top -200rem, right -200rem  bottom 200rem ;
   background-size: 50%;
   display: grid;
   grid-template-columns: 1fr;
-    justify-items: center;
-  gap: var(--space-xxl);
-  & > :first-child {margin-top: -20rem }
+  justify-items: center;
+  gap: var(--space-xl);
+  --br-line-left: 200rem;
+  --br-line-top: -300rem;
+
+  > :first-child {margin-top: -15vw;}
+  &__image {z-index: 100;}
+
+  @include respond(tab-land) {
+   background-position: left top var(--space-xxxxl), right bottom;
+    --br-line-left: 90%;
+    --br-line-top: 40%;
+  }
 
   @include respond(desktop) {
     background-size: initial;
@@ -52,14 +62,10 @@
      grid-row: 2;
      align-self: center;
     }
-    &__image {
-      margin-bottom: -20rem;
-      z-index: 100;
-      --br-line-left: 90%;
-      --br-line-top: 40%;
-    }
+    > :nth-child(3) { margin-bottom: -20rem; }
   }
 }
+
 
 .highlights {
   display: grid;
