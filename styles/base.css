@@ -713,9 +713,19 @@ body {
 .footer {
   font-size: var(--text-sm);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
   text-transform: uppercase;
+  text-align: center;
+  justify-items: center;
   letter-spacing: 1.8px;
-  padding-top: var(--space-xxl);
-  padding-bottom: var(--space-xxl);
+}
+@media only screen and (min-width: 37.5em) {
+  .footer {
+    justify-items: start;
+    text-align: left;
+  }
+  .footer .logo {
+    grid-row: span 2;
+  }
 }
