@@ -10,7 +10,7 @@
   justify-content: center;
   text-align: center;
 
-  > :first-child {margin-top: 35vw; }
+  > :first-child {margin-top: 36vw; }
 
   @include respond(tab-land) {
     background-image: url(../../images/homepage/hero-bg-tablet.jpg);
