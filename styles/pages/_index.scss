@@ -111,29 +111,18 @@
   background-image: url(../../images/patterns/pattern-curve-top-right.svg);
   background-repeat: no-repeat;
   background-position: left -40rem top;
-}
-
-.slides__container {
-  --grid-width: 60rem;
-  width: var(--grid-width);
-  margin: 0 auto;
   display: grid;
   grid-auto-flow: column;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  column-gap: 20rem;
-
-  @include respond(tab-land) {
-    --grid-width: 76.8rem;
-  }
-  @include respond(desktop) {
-    --grid-width: 125rem;
-  }
-
+  padding: 0;
+}
   .slide {
+    padding: var(--padding-pages);
     scroll-snap-align: center center;
     scroll-margin-top: 20rem; //critical for making sure the slide is in the middle of the screen
+    width: MIN(100vw, 144rem);
     display: grid;
      grid-template-columns: 1fr;
      align-items: start;
@@ -141,26 +130,24 @@
      justify-items: center;
     text-align: center;
     row-gap: 4rem;
-    width: var(--grid-width);
 
-    @include respond(tab-land) {
-
-    }
     @include respond(desktop) {
       grid-template-columns: auto 1fr;
      align-items: center;
      text-align: left;
-      gap: 12rem;
-     padding: 5rem;
+     column-gap: 8rem;
     }
 
     &__info p {
       max-width: 30ch;
     }
+
     &__img {
       --br-line-top: -5rem;
       --br-line-left: -5rem;
+      z-index: 100;
     }
+
     &__list {
       margin-top: var(--space-xxl);
       color: var( --clr-primary-200-op50);
@@ -182,7 +169,8 @@
       }
     }
   }
-}
+
+
 
 .cta {
   display: grid;
