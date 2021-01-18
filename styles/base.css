@@ -447,24 +447,27 @@ body {
 }
 
 .header {
-  background-image: url(../../images/homepage/hero-bg-tablet.jpg);
+  background-image: url(../../images/homepage/hero-bg-mobile.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(auto, 47rem);
   justify-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 45%;
 }
-.header .logo {
-  margin-bottom: 0;
+@media (min-resolution: 120dpi) {
+  .header {
+    background-image: url(../../images/homepage/hero-bg-mobile@2x.jpg);
+  }
+}
+.header > :first-child {
+  margin-top: 35vw;
 }
 @media only screen and (min-width: 37.5em) {
   .header {
     background-image: url(../../images/homepage/hero-bg-tablet.jpg);
-    grid-template-columns: minmax(auto, 47rem);
   }
 }
 @media only screen and (min-width: 37.5em) and (min-resolution: 120dpi) {
