@@ -63,8 +63,6 @@
   grid-template-columns: 1fr;
   gap: 5rem;
 
-
-
   &__intro {
     max-width: 47rem;
     margin: 0 auto;
@@ -117,23 +115,27 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   padding: 0;
-}
+
   .slide {
     padding: var(--padding-pages);
     scroll-snap-align: center center;
-    scroll-margin-top: 30rem; //critical for making sure the slide is in the middle of the screen
     width: MIN(100vw, 144rem);
     display: grid;
      grid-template-columns: 1fr;
      align-items: start;
      align-content: start;
-     justify-items: center;
     text-align: center;
+    justify-items: center;
+    --br-line-top: -50rem;
+    --br-line-left: -50rem;
 
     &__img {
+      z-index: 100;
+    }
+
+    @include respond(tab-land) {
       --br-line-top: -5rem;
       --br-line-left: -5rem;
-      z-index: 100;
     }
 
     @include respond(desktop) {
@@ -143,8 +145,10 @@
      column-gap: 8rem;
     }
   }
+}
 
 .slide__info {
+    justify-self: stretch;
     display: grid;
     gap: 3rem;
     justify-items: center;
@@ -158,12 +162,14 @@
       margin-top: var(--space-xl);
       color: var( --clr-primary-200-op50);
       display: grid;
-      column-gap: 4rem;
-      row-gap: 2rem;
+      width:100%;
+      row-gap: 1rem;
+      grid-row: 1;
       font-size: var(--text-sm);
+
       @include respond(tab-land) {
         grid-auto-flow: column;
-        grid-row: 1;
+      justify-content: space-between;
       }
       @include respond(desktop) {
         grid-auto-flow: row;
@@ -175,17 +181,13 @@
       }
       li.active::before {
         content: '';
-        width: 8rem;
         height: 1px;
         background: var(--clr-primary-100);
-
         position: absolute;
-        @include respond(tab-land) {
-          width: 5rem;
-          top: 120%;
-          left: 50%;
-          transform: translateX(-50%);
-        }
+        width: 5rem;
+        top: 120%;
+        left: 50%;
+        transform: translateX(-50%);
         @include respond(desktop) {
           width: 10rem;
           top: 50%;

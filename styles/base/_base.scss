@@ -77,7 +77,7 @@ body {
   background-color: var(--bg, var(--clr-neutral-100));
   color: var(--fg, var(--clr-secondary-200));
   font-family: var(--ff-primary);
-  font-size: var(--text-base-size);
+  font-size: var(--text-unit);
   line-height: 1.87;
   letter-spacing: -0.19;
   @include respond(tab-land) {
