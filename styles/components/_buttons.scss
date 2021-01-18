@@ -7,6 +7,10 @@
   transition: all .4s ease-in-out;
 }
 
+.btn--clear {
+  --bg-btn: transparent;
+}
+
 .btn:hover {
   background: var(--btn-bg-hover, var(--clr-neutral-100));
   color: var(--btn-fg-hover, var(--clr-primary-200));
