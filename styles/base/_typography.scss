@@ -4,44 +4,53 @@ html {
 }
 
 :root {
-
-  //fonts
-   --ff-primary: 'Spartan', sans-serif;
-
-  --text-base-size: 0.9375rem; //1em = 15px
-  --text-scale-ratio: 1.125;
-  --text-unit: var(--text-base-size);
-
-  @include respond (tab-land) {
-    --text-base-size: 1.8rem; // 18px
-    --text-scale-ratio: 1.25;
-  }
-
   --fw-300: 300;
   --fw-400: 400;
   --fw-600: 600;
   --fw-700: 700;
 
-}
+    //fonts
+   --ff-primary: 'Spartan', sans-serif;
 
+  --text-base-size: 1.5rem; //1.5rem = 15px
+  --text-scale-ratio: 1.125;
+
+  @include respond(tab-land) {
+    --text-base-size: 1.8rem; // 1.8rem = 18px
+    --text-scale-ratio: 1.25;
+  }
+
+  --text-unit: var(--text-base-size);
+
+}
 
 :root, * {
     // type scale
-  --text-xs: calc((var(--text-unit) / var(--text-scale-ratio)) / var(--text-scale-ratio)); // 0.79em 11.85     | 0.64em 11.52px
-  --text-sm: calc(var(--text-xs) * var(--text-scale-ratio)); // 0.889 13.33px| 0.8em 14.40px
-  --text-md: calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio)); // 1.125 16.88px|  1.25em 22.5px
-  --text-lg: calc(var(--text-md) * var(--text-scale-ratio)); // 1.266em 18.98px | 1.563em 28.13px
-  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio)); // 1.424rem 21.36px   | 1.953em 35.16px
-  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio)); // 1.602rem 24.03px |2.441em 43.95px
-  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio)); // 1.802rem 27.03px  | 3.052em 54.93px
-  --text-xxxxl: calc(var(--text-xxl) * var(--text-scale-ratio)); //  2.027rem/ 0.41px | 3.815em 68.66px
+  --text-xs: calc((var(--text-unit) / var(--text-scale-ratio)) / var(--text-scale-ratio)); // 11.85rem | 1.152rem
+  --text-sm: calc(var(--text-xs) * var(--text-scale-ratio)); // 1.333rem |  1.44rem
+  --text-md: calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio)); // 1.688rem | 2.25rem
+  --text-lg: calc(var(--text-md) * var(--text-scale-ratio)); // 1.898rem | 2.813rem
+  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio)); // 2.136rem   | 3.516rem
+  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio)); // 2.403rem | 4.395rem
+  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio)); // 2.703rem  | 5.493rem
+  --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio)); //  3.041rem | 6.866rem
 }
+
+
 
 h1, .h1 {
   font-size: var(--text-xxxxl);
   font-weight: var(--fw-300);
   letter-spacing: 0.8px;
   line-height: 1.125;
+
+   @include respond(tab-land) {
+    font-size: var(--text-xxl); //exception
+  }
+
+  @include respond(desktop) {
+    font-size: var(--text-xxxxl);
+  }
 }
 
 h2, .h2 {
