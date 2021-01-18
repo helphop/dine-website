@@ -503,14 +503,21 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  gap: var(--space-xxl);
+  gap: var(--space-xl);
+  --br-line-left: 200rem;
+  --br-line-top: -300rem;
 }
 .features > :first-child {
-  margin-top: -20rem;
+  margin-top: -15vw;
+}
+.features__image {
+  z-index: 100;
 }
 @media only screen and (min-width: 37.5em) {
   .features {
     background-position: left top var(--space-xxxxl), right bottom;
+    --br-line-left: 90%;
+    --br-line-top: 40%;
   }
 }
 @media only screen and (min-width: 75em) {
@@ -524,11 +531,8 @@ body {
     grid-row: 2;
     align-self: center;
   }
-  .features__image {
+  .features > :nth-child(3) {
     margin-bottom: -20rem;
-    z-index: 100;
-    --br-line-left: 90%;
-    --br-line-top: 40%;
   }
 }
 
