@@ -121,7 +121,7 @@
   .slide {
     padding: var(--padding-pages);
     scroll-snap-align: center center;
-    scroll-margin-top: 20rem; //critical for making sure the slide is in the middle of the screen
+    scroll-margin-top: 30rem; //critical for making sure the slide is in the middle of the screen
     width: MIN(100vw, 144rem);
     display: grid;
      grid-template-columns: 1fr;
@@ -129,18 +129,6 @@
      align-content: start;
      justify-items: center;
     text-align: center;
-    row-gap: 4rem;
-
-    @include respond(desktop) {
-      grid-template-columns: auto 1fr;
-     align-items: center;
-     text-align: left;
-     column-gap: 8rem;
-    }
-
-    &__info p {
-      max-width: 30ch;
-    }
 
     &__img {
       --br-line-top: -5rem;
@@ -148,9 +136,39 @@
       z-index: 100;
     }
 
+    @include respond(desktop) {
+      grid-template-columns: auto 1fr;
+     align-items: center;
+     text-align: left;
+     column-gap: 8rem;
+    }
+  }
+
+.slide__info {
+    display: grid;
+    gap: 3rem;
+    justify-items: center;
+    @include respond(desktop) {
+      justify-items: start;
+    }
+    p {
+      max-width: 30ch;
+    }
     &__list {
-      margin-top: var(--space-xxl);
+      margin-top: var(--space-xl);
       color: var( --clr-primary-200-op50);
+      display: grid;
+      column-gap: 4rem;
+      row-gap: 2rem;
+      font-size: var(--text-sm);
+      @include respond(tab-land) {
+        grid-auto-flow: column;
+        grid-row: 1;
+      }
+      @include respond(desktop) {
+        grid-auto-flow: row;
+        grid-row: initial;
+      }
       li.active {
         color: var(--clr-primary-200);
         position: relative;
@@ -160,17 +178,26 @@
         width: 8rem;
         height: 1px;
         background: var(--clr-primary-100);
-        top: 1.2rem;
-        left: -10rem;
+
         position: absolute;
+        @include respond(tab-land) {
+          width: 5rem;
+          top: 120%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        @include respond(desktop) {
+          width: 10rem;
+          top: 50%;
+          left: -50%;
+          transform: translate(-50%, -50%);
+        }
       }
       li a:hover {
         color: var(--clr-primary-200);
       }
     }
   }
-
-
 
 .cta {
   display: grid;
