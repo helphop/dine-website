@@ -481,11 +481,11 @@ body {
     justify-content: start;
     justify-items: start;
     text-align: left;
-    padding-top: var(--space-xxxl);
     background-image: url(../../images/homepage/hero-bg-desktop.jpg);
   }
-  .header .logo {
-    margin: calc(-1 * var(--space-xl)) 0 var(--space-xxl) 0;
+  .header > :first-child {
+    margin-top: 0;
+    transform: translateY(-200%);
   }
 }
 @media only screen and (min-width: 75em) and (min-resolution: 120dpi) {
