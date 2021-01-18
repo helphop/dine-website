@@ -498,7 +498,7 @@ body {
   text-align: center;
   background-image: url(../../images/patterns/pattern-curve-top-right.svg), url(../../images/patterns/pattern-curve-top-left.svg);
   background-repeat: no-repeat, no-repeat;
-  background-position: left top var(--space-xxxxl), right bottom;
+  background-position: left 200rem top -200rem, right -200rem bottom 200rem;
   background-size: 50%;
   display: grid;
   grid-template-columns: 1fr;
@@ -507,6 +507,11 @@ body {
 }
 .features > :first-child {
   margin-top: -20rem;
+}
+@media only screen and (min-width: 37.5em) {
+  .features {
+    background-position: left top var(--space-xxxxl), right bottom;
+  }
 }
 @media only screen and (min-width: 75em) {
   .features {
