@@ -452,7 +452,7 @@ body {
   background-size: cover;
   background-position: top center;
   display: grid;
-  grid-template-columns: minmax(auto, 47rem);
+  grid-template-columns: minmax(auto, var(--min, 35rem));
   justify-items: center;
   justify-content: center;
   text-align: center;
@@ -468,6 +468,7 @@ body {
 @media only screen and (min-width: 37.5em) {
   .header {
     background-image: url(../../images/homepage/hero-bg-tablet.jpg);
+    --min: 50rem;
   }
 }
 @media only screen and (min-width: 37.5em) and (min-resolution: 120dpi) {
@@ -477,14 +478,14 @@ body {
 }
 @media only screen and (min-width: 75em) {
   .header {
-    background-image: url(../../images/homepage/hero-bg-desktop.jpg);
     justify-content: start;
     justify-items: start;
     text-align: left;
-    padding-top: var(--space-xxxl);
+    background-image: url(../../images/homepage/hero-bg-desktop.jpg);
   }
-  .header .logo {
-    margin: calc(-1 * var(--space-xl)) 0 var(--space-xxl) 0;
+  .header > :first-child {
+    margin-top: 0;
+    transform: translateY(-200%);
   }
 }
 @media only screen and (min-width: 75em) and (min-resolution: 120dpi) {
