@@ -80,13 +80,15 @@ body {
   font-size: var(--text-unit);
   line-height: 1.87;
   letter-spacing: -0.19;
+  padding: var(--padding-pages-vertical) var(--padding-pages-horizontal);
+
   @include respond(tab-land) {
     line-height: 1.66;
     letter-spacing: -0.22px;
-    padding:  var(--space-xxl);
+    padding: var(--padding-pages-vertical) var(--padding-pages-horizontal);
   }
   @include respond(desktop) {
-    padding:  var(--space-xxxl);
+    padding: var(--padding-pages-vertical) var(--padding-pages-horizontal);
   }
 }
 
