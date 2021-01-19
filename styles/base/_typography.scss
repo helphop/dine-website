@@ -42,10 +42,11 @@ h1, .h1 {
   font-size: var(--text-xxxl);
   font-weight: var(--fw-300);
   letter-spacing: 0.8px;
-  line-height: 1.125;
+  line-height: 1.3;
 
    @include respond(tab-land) {
     font-size: var(--text-xxl); //exception
+    line-height: 1.125;
   }
 
   @include respond(desktop) {

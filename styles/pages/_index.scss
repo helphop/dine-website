@@ -5,23 +5,24 @@
   background-size: cover;
   background-position: top center;
   display: grid;
-  grid-template-columns: minmax(auto, var(--min, 35rem));
+  grid-template-columns: 1fr;
   justify-items: center;
   justify-content: center;
   text-align: center;
-
-  > :first-child {margin-top: 50%; }
+  h1 {max-width: 10ch;}
+  p {max-width: 30ch; }
+  > :first-child {margin-top: 50%;}
 
   @include respond(tab-land) {
     background-image: url(../../images/homepage/hero-bg-tablet.jpg);
      @include resolution(high) {background-image: url(../../images/homepage/hero-bg-tablet@2x.jpg);}
-     --min: 50rem;
   }
 
   @include respond(desktop) {
     > :first-child {
        margin-top: 0;
-      transform: translateY(-200%);
+       position: relative;
+       top: -8rem;
     }
     justify-content: start;
     justify-items: start;
@@ -30,6 +31,8 @@
     @include resolution(high) {background-image: url(../../images/homepage/hero-bg-desktop@2x.jpg);}
   }
 }
+
+
 
 .features {
   text-align: center;

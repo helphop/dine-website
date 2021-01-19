@@ -110,7 +110,7 @@ $breakpoint argument choices:
   --clr-secondary-300-s40: hsl(var(--secondary-hue-300), 42%, 13%);
   --clr-secondary-300-l50: hsl(var(--secondary-hue-300), 30%, 19.5%);
   --clr-secondary-300-s50: hsl(var(--secondary-hue-300), 45%, 13%);
-  --box-shadow-100: 1rem 3rem 4rem -2rem hsla(calc(var(--clr-primary-200-h) * 1), calc(var(--clr-primary-200-s) * 1), calc(var(--clr-primary-200-l) * 1), 0.3);
+  --box-shadow-100: 1rem 3rem 6rem -2rem hsla(calc(var(--clr-primary-200-h) * 1), calc(var(--clr-primary-200-s) * 1), calc(var(--clr-primary-200-l) * 1), 0.3);
   --br: 3rem;
   --space-unit-rem: 1.6rem;
   --space-unit: 1em;
@@ -130,7 +130,7 @@ $breakpoint argument choices:
 }
 @media only screen and (min-width: 37.5em) {
   :root {
-    --padding-pages-horizontal: var(--space-xxl);
+    --padding-pages-horizontal: var(--space-xxxl);
   }
 }
 
@@ -170,11 +170,12 @@ h1, .h1 {
   font-size: var(--text-xxxl);
   font-weight: var(--fw-300);
   letter-spacing: 0.8px;
-  line-height: 1.125;
+  line-height: 1.3;
 }
 @media only screen and (min-width: 37.5em) {
   h1, .h1 {
     font-size: var(--text-xxl);
+    line-height: 1.125;
   }
 }
 @media only screen and (min-width: 75em) {
@@ -445,7 +446,7 @@ body {
   background-size: cover;
   background-position: top center;
   display: grid;
-  grid-template-columns: minmax(auto, var(--min, 35rem));
+  grid-template-columns: 1fr;
   justify-items: center;
   justify-content: center;
   text-align: center;
@@ -455,13 +456,18 @@ body {
     background-image: url(../../images/homepage/hero-bg-mobile@2x.jpg);
   }
 }
+.header h1 {
+  max-width: 10ch;
+}
+.header p {
+  max-width: 30ch;
+}
 .header > :first-child {
   margin-top: 50%;
 }
 @media only screen and (min-width: 37.5em) {
   .header {
     background-image: url(../../images/homepage/hero-bg-tablet.jpg);
-    --min: 50rem;
   }
 }
 @media only screen and (min-width: 37.5em) and (min-resolution: 120dpi) {
@@ -478,7 +484,8 @@ body {
   }
   .header > :first-child {
     margin-top: 0;
-    transform: translateY(-200%);
+    position: relative;
+    top: -8rem;
   }
 }
 @media only screen and (min-width: 75em) and (min-resolution: 120dpi) {
