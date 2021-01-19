@@ -10,7 +10,7 @@
   justify-content: center;
   text-align: center;
 
-  > :first-child {margin-top: 36vw; }
+  > :first-child {margin-top: 50%; }
 
   @include respond(tab-land) {
     background-image: url(../../images/homepage/hero-bg-tablet.jpg);
@@ -41,28 +41,33 @@
   grid-template-columns: 1fr;
   justify-items: center;
   gap: var(--space-xl);
-  --br-line-left: 200rem;
-  --br-line-top: -300rem;
+  &__image.brown-lines {
+    &::after { display: none;}
+  }
 
-  > :first-child {margin-top: -15vw;}
+  > :first-child {margin-top: calc(-1.5  * var(--padding-pages-vertical));}
   &__image {z-index: 100;}
 
   @include respond(tab-land) {
    background-position: left top var(--space-xxxxl), right bottom;
     --br-line-left: 90%;
     --br-line-top: 40%;
+    &__image.brown-lines {
+    &::after { display: block;}
+  }
   }
 
   @include respond(desktop) {
     background-size: initial;
     grid-template-columns: repeat(2, 1fr);
     text-align: left;
+    justify-items: start;
     & > :last-child {
      grid-column: 1;
      grid-row: 2;
      align-self: center;
     }
-    > :nth-child(3) { margin-bottom: -20rem; }
+    > :nth-child(3) { margin-bottom: calc(-1.5  * var(--padding-pages-vertical)); }
   }
 }
 
@@ -99,6 +104,7 @@
       max-width: 21ch;
     }
     @include respond(tab-land) {
+      max-width: initial;
       justify-content: center;
       justify-items: start;
       grid-template-columns: 1fr 2fr;
@@ -115,6 +121,10 @@
         position: absolute;
         top: 20%;
         right: -3rem;
+        display: none;
+        @include respond(tab-land) {
+          display: block;
+        }
       }
     }
     &:nth-child(2) {
@@ -151,9 +161,7 @@
     --br-line-top: -50rem;
     --br-line-left: -50rem;
 
-    &__img {
-      z-index: 100;
-    }
+    &__img {z-index: 100;}
 
     @include respond(tab-land) {
       --br-line-top: -5rem;
@@ -187,7 +195,7 @@
       width:100%;
       row-gap: 1rem;
       grid-row: 1;
-      font-size: var(--text-sm);
+      font-size: 1.4rem;
 
       @include respond(tab-land) {
         grid-auto-flow: column;
@@ -224,7 +232,6 @@
   }
 
 .cta {
-
   background-image: url(../../images/homepage/ready-bg-mobile.jpg);
   @include resolution(high) {background-image: url(../../images/homepage/ready-bg-mobile@2x.jpg);}
   background-repeat: no-repeat;
@@ -236,6 +243,8 @@
  text-align: center;
 
   @include respond(tab-land) {
+    padding-top: var(--space-xxl);
+    padding-bottom: var(--space-xxl);
     background-image: url(../../images/homepage/ready-bg-tablet.jpg);
      @include resolution(high) {background-image: url(../../images/homepage/ready-bg-tablet@2x.jpg);}
 
@@ -261,6 +270,8 @@
   justify-items: center;
   letter-spacing: 1.8px;
   @include respond(tab-land) {
+   padding-top: var(--space-xxl);
+   padding-bottom: var(--space-xxl);
     justify-items: start;
     text-align: left;
     .logo { grid-row: span 2; }

@@ -126,18 +126,11 @@ $breakpoint argument choices:
   --space-xxxl: calc(8.5 * var(--space-unit));
   --space-xxxxl: calc(13.75 * var(--space-unit));
   --padding-pages-horizontal: var(--space-md);
-  --padding-pages-vertical: var(--space-xl);
+  --padding-pages-vertical: var(--space-xxxl);
 }
 @media only screen and (min-width: 37.5em) {
   :root {
     --padding-pages-horizontal: var(--space-xxl);
-    --padding-pages-vertical: var(--space-xxl);
-  }
-}
-@media only screen and (min-width: 75em) {
-  :root {
-    --padding-pages-horizontal: var(--space-xxxl);
-    --padding-pages-vertical: var(--space-xxxl);
   }
 }
 
@@ -152,7 +145,7 @@ html {
   --fw-700: 700;
   --ff-primary: "Spartan", sans-serif;
   --text-base-size: 1.5rem;
-  --text-scale-ratio: 1.125;
+  --text-scale-ratio: 1.2;
   --text-unit: var(--text-base-size);
 }
 @media only screen and (min-width: 37.5em) {
@@ -174,7 +167,7 @@ html {
 }
 
 h1, .h1 {
-  font-size: var(--text-xxxxl);
+  font-size: var(--text-xxxl);
   font-weight: var(--fw-300);
   letter-spacing: 0.8px;
   line-height: 1.125;
@@ -463,7 +456,7 @@ body {
   }
 }
 .header > :first-child {
-  margin-top: 36vw;
+  margin-top: 50%;
 }
 @media only screen and (min-width: 37.5em) {
   .header {
@@ -504,11 +497,12 @@ body {
   grid-template-columns: 1fr;
   justify-items: center;
   gap: var(--space-xl);
-  --br-line-left: 200rem;
-  --br-line-top: -300rem;
+}
+.features__image.brown-lines::after {
+  display: none;
 }
 .features > :first-child {
-  margin-top: -15vw;
+  margin-top: calc(-1.5 * var(--padding-pages-vertical));
 }
 .features__image {
   z-index: 100;
@@ -519,12 +513,16 @@ body {
     --br-line-left: 90%;
     --br-line-top: 40%;
   }
+  .features__image.brown-lines::after {
+    display: block;
+  }
 }
 @media only screen and (min-width: 75em) {
   .features {
     background-size: initial;
     grid-template-columns: repeat(2, 1fr);
     text-align: left;
+    justify-items: start;
   }
   .features > :last-child {
     grid-column: 1;
@@ -532,7 +530,7 @@ body {
     align-self: center;
   }
   .features > :nth-child(3) {
-    margin-bottom: -20rem;
+    margin-bottom: calc(-1.5 * var(--padding-pages-vertical));
   }
 }
 
@@ -570,6 +568,7 @@ body {
 }
 @media only screen and (min-width: 37.5em) {
   .highlights__menu-item {
+    max-width: initial;
     justify-content: center;
     justify-items: start;
     grid-template-columns: 1fr 2fr;
@@ -587,6 +586,12 @@ body {
   position: absolute;
   top: 20%;
   right: -3rem;
+  display: none;
+}
+@media only screen and (min-width: 37.5em) {
+  .highlights__menu-item .menu__image::after {
+    display: block;
+  }
 }
 .highlights__menu-item:nth-child(2) {
   border-bottom: 1px solid hsla(calc(var(--clr-neutral-100-h) * 1), calc(var(--clr-neutral-100-s) * 1), calc(var(--clr-neutral-100-l) * 1), 0.14);
@@ -659,7 +664,7 @@ body {
   width: 100%;
   row-gap: 1rem;
   grid-row: 1;
-  font-size: var(--text-sm);
+  font-size: 1.4rem;
 }
 @media only screen and (min-width: 37.5em) {
   .slide__info__list {
@@ -716,6 +721,8 @@ body {
 }
 @media only screen and (min-width: 37.5em) {
   .cta {
+    padding-top: var(--space-xxl);
+    padding-bottom: var(--space-xxl);
     background-image: url(../../images/homepage/ready-bg-tablet.jpg);
   }
 }
@@ -750,6 +757,8 @@ body {
 }
 @media only screen and (min-width: 37.5em) {
   .footer {
+    padding-top: var(--space-xxl);
+    padding-bottom: var(--space-xxl);
     justify-items: start;
     text-align: left;
   }
