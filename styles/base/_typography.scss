@@ -13,7 +13,7 @@ html {
    --ff-primary: 'Spartan', sans-serif;
 
   --text-base-size: 1.5rem; //1.5rem = 15px
-  --text-scale-ratio: 1.125;
+  --text-scale-ratio: 1.2;
 
   @include respond(tab-land) {
     --text-base-size: 1.8rem; // 1.8rem = 18px
@@ -25,7 +25,7 @@ html {
 }
 
 :root, * {
-    // type scale
+    // type scale !!need to recalculate as using a different scale for smaller screen sizes
   --text-xs: calc((var(--text-unit) / var(--text-scale-ratio)) / var(--text-scale-ratio)); // 11.85rem | 1.152rem
   --text-sm: calc(var(--text-xs) * var(--text-scale-ratio)); // 1.333rem |  1.44rem
   --text-md: calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio)); // 1.688rem | 2.25rem
@@ -39,7 +39,7 @@ html {
 
 
 h1, .h1 {
-  font-size: var(--text-xxxxl);
+  font-size: var(--text-xxxl);
   font-weight: var(--fw-300);
   letter-spacing: 0.8px;
   line-height: 1.125;

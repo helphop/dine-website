@@ -52,16 +52,10 @@
   --space-xxxxl: calc(13.75 * var(--space-unit));
 
   --padding-pages-horizontal: var(--space-md);
-  --padding-pages-vertical: var(--space-xl);
+  --padding-pages-vertical: var(--space-xxxl);
 
   @include respond(tab-land) {
     --padding-pages-horizontal: var(--space-xxl);
-    --padding-pages-vertical:  var(--space-xxl);
   }
-  @include respond(desktop) {
-     --padding-pages-horizontal: var(--space-xxxl);
-     --padding-pages-vertical: var(--space-xxxl);
-  }
-
 
 }
