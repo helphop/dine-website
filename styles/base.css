@@ -448,6 +448,28 @@ body {
   display: var(--br-line-display, block);
 }
 
+.footer {
+  font-size: var(--text-sm);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  justify-items: center;
+  letter-spacing: 1.8px;
+}
+@media only screen and (min-width: 37.5em) {
+  .footer {
+    padding-top: var(--space-xxl);
+    padding-bottom: var(--space-xxl);
+    justify-items: start;
+    text-align: left;
+  }
+  .footer .logo {
+    grid-row: span 2;
+  }
+}
+
 .header {
   background-image: url(../../images/homepage/hero-bg-mobile.jpg);
   background-repeat: no-repeat;
@@ -722,7 +744,6 @@ body {
   background-size: cover;
   display: grid;
   gap: 2rem;
-  align-items: start;
   justify-items: center;
   text-align: center;
 }
@@ -746,9 +767,8 @@ body {
 @media only screen and (min-width: 75em) {
   .cta {
     background-image: url(../../images/homepage/ready-bg-desktop.jpg);
-    grid-template-columns: 1fr auto;
+    grid-auto-flow: column;
     text-align: left;
-    justify-items: start;
   }
 }
 @media only screen and (min-width: 75em) and (min-resolution: 120dpi) {
@@ -756,25 +776,8 @@ body {
     background-image: url(../../images/homepage/ready-bg-desktop@2x.jpg);
   }
 }
-
-.footer {
-  font-size: var(--text-sm);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 2rem;
-  text-transform: uppercase;
-  text-align: center;
-  justify-items: center;
-  letter-spacing: 1.8px;
-}
-@media only screen and (min-width: 37.5em) {
-  .footer {
-    padding-top: var(--space-xxl);
-    padding-bottom: var(--space-xxl);
-    justify-items: start;
-    text-align: left;
-  }
-  .footer .logo {
-    grid-row: span 2;
+@media only screen and (min-width: 75em) {
+  .cta .btn {
+    align-self: start;
   }
 }

@@ -226,7 +226,6 @@
   background-size: cover;
  display: grid;
   gap: 2rem;
-  align-items: start;
   justify-items: center;
  text-align: center;
 
@@ -234,34 +233,16 @@
     padding-top: var(--space-xxl);
     padding-bottom: var(--space-xxl);
     background-image: url(../../images/homepage/ready-bg-tablet.jpg);
-     @include resolution(high) {background-image: url(../../images/homepage/ready-bg-tablet@2x.jpg);}
-
+    @include resolution(high) {background-image: url(../../images/homepage/ready-bg-tablet@2x.jpg);}
   }
 
   @include respond(desktop) {
     background-image: url(../../images/homepage/ready-bg-desktop.jpg);
      @include resolution(high) {background-image: url(../../images/homepage/ready-bg-desktop@2x.jpg);}
-      grid-template-columns: 1fr auto;
-      text-align: left;
-      justify-items: start;
-  }
-
-}
-
-.footer {
-  font-size: var(--text-sm);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 2rem;
-  text-transform: uppercase;
-  text-align: center;
-  justify-items: center;
-  letter-spacing: 1.8px;
-  @include respond(tab-land) {
-   padding-top: var(--space-xxl);
-   padding-bottom: var(--space-xxl);
-    justify-items: start;
+     grid-auto-flow: column;
     text-align: left;
-    .logo { grid-row: span 2; }
+    .btn { align-self: start;}
   }
+
 }
+
