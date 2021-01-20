@@ -3,10 +3,11 @@
     &::after {
       position: absolute;
       content: '';
-      width: 20rem;
-      height: 20rem;
+      width: 16rem;
+      height: 8rem;
       background: url(../../images/patterns/pattern-lines.svg) no-repeat;
       top: var(--br-line-top, 0);
       left: var(--br-line-left, 0);
+      display: var(--br-line-display, block);
     }
   }

@@ -32,7 +32,7 @@
   @include defineColorHSL(--clr-secondary-300, var(--secondary-hue-300), 30%, 13%);
 
   //shadows
-  --box-shadow-100: 1rem 3rem 4rem -2rem #{adjustHSLA(var(--clr-primary-200), $opacity: 0.3)};
+  --box-shadow-100: 1rem 3rem 6rem -2rem #{adjustHSLA(var(--clr-primary-200), $opacity: 0.3)};
 
   --br: 3rem;
 
@@ -50,12 +50,18 @@
   --space-xxl:   calc(5.25 * var(--space-unit));
   --space-xxxl:  calc(8.5 * var(--space-unit));
   --space-xxxxl: calc(13.75 * var(--space-unit));
+  --space-huge: calc(200 * var(--space-unit));
 
   --padding-pages-horizontal: var(--space-md);
-  --padding-pages-vertical: var(--space-xxxl);
+  --padding-pages-vertical: var(--space-xxl);
 
   @include respond(tab-land) {
     --padding-pages-horizontal: var(--space-xxl);
+  }
+
+  @include respond(desktop) {
+    --padding-pages-vertical: var(--space-xxxl);
+    --padding-pages-horizontal: var(--space-xxxl);
   }
 
 }
