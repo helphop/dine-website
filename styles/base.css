@@ -471,8 +471,36 @@ body {
   }
 }
 
-.header {
+.index .header {
   background-image: url(../../images/homepage/hero-bg-mobile.jpg);
+}
+@media (min-resolution: 120dpi) {
+  .index .header {
+    background-image: url(../../images/homepage/hero-bg-mobile@2x.jpg);
+  }
+}
+@media only screen and (min-width: 37.5em) {
+  .index .header {
+    background-image: url(../../images/homepage/hero-bg-tablet.jpg);
+  }
+}
+@media only screen and (min-width: 37.5em) and (min-resolution: 120dpi) {
+  .index .header {
+    background-image: url(../../images/homepage/hero-bg-tablet@2x.jpg);
+  }
+}
+@media only screen and (min-width: 75em) {
+  .index .header {
+    background-image: url(../../images/homepage/hero-bg-desktop.jpg);
+  }
+}
+@media only screen and (min-width: 75em) and (min-resolution: 120dpi) {
+  .index .header {
+    background-image: url(../../images/homepage/hero-bg-desktop@2x.jpg);
+  }
+}
+
+.header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -481,11 +509,6 @@ body {
   justify-items: center;
   justify-content: center;
   text-align: center;
-}
-@media (min-resolution: 120dpi) {
-  .header {
-    background-image: url(../../images/homepage/hero-bg-mobile@2x.jpg);
-  }
 }
 .header h1 {
   max-width: 10ch;
@@ -496,32 +519,16 @@ body {
 .header > :first-child {
   margin-top: 50%;
 }
-@media only screen and (min-width: 37.5em) {
-  .header {
-    background-image: url(../../images/homepage/hero-bg-tablet.jpg);
-  }
-}
-@media only screen and (min-width: 37.5em) and (min-resolution: 120dpi) {
-  .header {
-    background-image: url(../../images/homepage/hero-bg-tablet@2x.jpg);
-  }
-}
 @media only screen and (min-width: 75em) {
   .header {
     justify-content: start;
     justify-items: start;
     text-align: left;
-    background-image: url(../../images/homepage/hero-bg-desktop.jpg);
   }
   .header > :first-child {
     margin-top: 0;
     position: relative;
     top: calc(-1 * var(--space-xxl));
-  }
-}
-@media only screen and (min-width: 75em) and (min-resolution: 120dpi) {
-  .header {
-    background-image: url(../../images/homepage/hero-bg-desktop@2x.jpg);
   }
 }
 
