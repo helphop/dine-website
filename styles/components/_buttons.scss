@@ -1,18 +1,40 @@
 .btn {
   display: inline-block;
-  padding: var(--space-sm) var(--space-xl);
+  padding: var(--space-md) var(--space-xl);
   border: 1px solid var(--btn-bd, var(--clr-primary-200));
   background: var(--bg-btn, var(--clr-primary-200));
   color: var(--fg-btn, var(--clr-neutral-100));
   transition: all .4s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+
+  &:hover {
+  background: var(--btn-bg-hover, var(--clr-neutral-100));
+  color: var(--btn-fg-hover, var(--clr-primary-200));
+  }
 }
 
 .btn--clear {
   --bg-btn: transparent;
 }
 
-.btn:hover {
-  background: var(--btn-bg-hover, var(--clr-neutral-100));
-  color: var(--btn-fg-hover, var(--clr-primary-200));
+.btn--brown {
+  --fg-btn: var(--clr-primary-100);
 }
 
+.btn--no-border {
+  border: none;
+}
+
+
+
+.btn--icon {
+  --fg-btn: var(--clr-primary-100);
+  --bg-btn: transparent;
+  border: none;
+  &:hover {
+    background: none;
+    color: #{adjustHSLA(var(--clr-primary-100), $opacity: 0.5)};
+
+  }
+}
