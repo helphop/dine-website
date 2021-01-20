@@ -50,11 +50,17 @@
   --space-xxl:   calc(5.25 * var(--space-unit));
   --space-xxxl:  calc(8.5 * var(--space-unit));
   --space-xxxxl: calc(13.75 * var(--space-unit));
+  --space-huge: calc(200 * var(--space-unit));
 
   --padding-pages-horizontal: var(--space-md);
-  --padding-pages-vertical: var(--space-xxxl);
+  --padding-pages-vertical: var(--space-xxl);
 
   @include respond(tab-land) {
+    --padding-pages-horizontal: var(--space-xxl);
+  }
+
+  @include respond(desktop) {
+    --padding-pages-vertical: var(--space-xxxl);
     --padding-pages-horizontal: var(--space-xxxl);
   }
 

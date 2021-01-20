@@ -22,7 +22,7 @@
     > :first-child {
        margin-top: 0;
        position: relative;
-       top: -8rem;
+       top: calc(-1 * var(--space-xxl));
     }
     justify-content: start;
     justify-items: start;
@@ -36,28 +36,21 @@
 
 .features {
   text-align: center;
-  background-image: url(../../images/patterns/pattern-curve-top-right.svg), url(../../images/patterns/pattern-curve-top-left.svg);
-  background-repeat: no-repeat, no-repeat;
-  background-position: left 200rem top -200rem, right -200rem  bottom 200rem ;
-  background-size: 50%;
   display: grid;
-  grid-template-columns: 1fr;
   justify-items: center;
   gap: var(--space-xl);
-  &__image.brown-lines {
-    &::after { display: none;}
-  }
-
+  --br-line-display: none;
   > :first-child {margin-top: calc(-1.5  * var(--padding-pages-vertical));}
   &__image {z-index: 100;}
 
   @include respond(tab-land) {
+   background-size: 50%;
+   background-image: url(../../images/patterns/pattern-curve-top-right.svg), url(../../images/patterns/pattern-curve-top-left.svg);
+   background-repeat: no-repeat, no-repeat;
    background-position: left top var(--space-xxxxl), right bottom;
-    --br-line-left: 90%;
+    --br-line-left: 80%;
     --br-line-top: 40%;
-    &__image.brown-lines {
-    &::after { display: block;}
-  }
+    --br-line-display: block;
   }
 
   @include respond(desktop) {
@@ -65,6 +58,7 @@
     grid-template-columns: repeat(2, 1fr);
     text-align: left;
     justify-items: start;
+    --br-line-left: 90%;
     & > :last-child {
      grid-column: 1;
      grid-row: 2;
@@ -77,105 +71,94 @@
 
 .highlights {
   display: grid;
-  grid-template-columns: 1fr;
   justify-items: center;
-  gap: 5rem;
+  gap: var(--space-lg);
 
   &__intro {
-    max-width: 47rem;
-    margin: 0 auto;
+    max-width: 46rem;
     text-align: center;
   }
 
   @include respond(desktop) {
-    grid-template-columns: 47rem 1fr;
-    gap: 10rem;
-    &__intro {
-      text-align: left;
-    }
+    grid-auto-flow: column;
+    justify-content: space-between;
+    &__intro {text-align: left;}
   }
 
   &__menu-item {
-    max-width: 30rem;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 5rem;
-    padding: 3rem 0;
+    gap: var(--space-xl);
+    padding: var(--space-lg) 0;
     justify-items: center;
     text-align: center;
-    .menu__desc {
-      max-width: 21ch;
-    }
+
     @include respond(tab-land) {
-      max-width: initial;
-      justify-content: center;
-      justify-items: start;
-      grid-template-columns: 1fr 2fr;
+      grid-auto-flow: column;
       text-align: left;
+      z-index: 1;
     }
+
+    &:not(:first-child) { border-top: 1px solid adjustHSLA(var(--clr-neutral-100), $opacity: 0.14);}
+    p {font-size: var(--text-sm);}
+    .menu__desc {max-width: 20ch;}
 
     .menu__image {
       position: relative;
-      &::after {
+      z-index: 1;
+      > img {
+        position: relative;
+      }
+      &::before {
         content: '';
         height: 1px;
-        width: 3rem;
+        width: var(--space-lg);
         background-color: var(--clr-primary-100);
         position: absolute;
-        top: 20%;
+        top: 1.5rem;
         right: -3rem;
         display: none;
         @include respond(tab-land) {
           display: block;
+          z-index: -1;
         }
       }
-    }
-    &:nth-child(2) {
-      border-bottom: 1px solid adjustHSLA(var(--clr-neutral-100), $opacity: 0.14);
-      border-top: 1px solid adjustHSLA(var(--clr-neutral-100), $opacity: 0.14);
-    }
-    p {
-      font-size: var(--text-sm);
     }
   }
 }
 
 .slides {
-  background-image: url(../../images/patterns/pattern-curve-top-right.svg);
-  background-repeat: no-repeat;
-  background-position: left -40rem top;
   display: grid;
   grid-auto-flow: column;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   padding: 0;
+  @include respond(tab-land) {
+    background-image: url(../../images/patterns/pattern-curve-top-right.svg);
+    background-repeat: no-repeat;
+    background-position: left -40rem top;
+    }
 
   .slide {
     padding: var(--padding-pages-vertical) var(--padding-pages-horizontal);
-    scroll-snap-align: center center;
     width: MIN(100vw, 144rem);
     display: grid;
-     grid-template-columns: 1fr;
-     align-items: start;
-     align-content: start;
     text-align: center;
     justify-items: center;
-    --br-line-top: -50rem;
-    --br-line-left: -50rem;
-
+    --br-line-display: none;
     &__img {z-index: 100;}
 
     @include respond(tab-land) {
-      --br-line-top: -5rem;
+      --br-line-display: block;
+      --br-line-top: -4.5rem;
       --br-line-left: -5rem;
     }
 
     @include respond(desktop) {
-      grid-template-columns: auto 1fr;
+      grid-auto-flow: column;
      align-items: center;
      text-align: left;
-     column-gap: 8rem;
+     column-gap: var(--space-xxl);
     }
   }
 }
@@ -183,53 +166,55 @@
 .slide__info {
     justify-self: stretch;
     display: grid;
-    gap: 3rem;
+    gap: var(--space-md);
     justify-items: center;
-    @include respond(desktop) {
-      justify-items: start;
-    }
-    p {
-      max-width: 30ch;
-    }
+    @include respond(desktop) { justify-items: start; }
+    p { max-width: 30ch; }
+
     &__list {
+       grid-row: 1;
       margin-top: var(--space-xl);
       color: var( --clr-primary-200-op50);
+      font-size: 1.4rem;
+      letter-spacing: 1.5px;
+      font-weight: var(--fw-600);
       display: grid;
       width:100%;
-      row-gap: 1rem;
-      grid-row: 1;
-      font-size: 1.4rem;
+      row-gap: 1.5rem;
+
 
       @include respond(tab-land) {
         grid-auto-flow: column;
       justify-content: space-between;
       }
+
       @include respond(desktop) {
         grid-auto-flow: row;
         grid-row: initial;
       }
-      li.active {
+
+      li {
+        transition: all 0.4s ease-in-out;
+        &:hover {color: var(--clr-primary-200); }
+        &.active {
         color: var(--clr-primary-200);
         position: relative;
-      }
-      li.active::before {
-        content: '';
-        height: 1px;
-        background: var(--clr-primary-100);
-        position: absolute;
-        width: 5rem;
-        top: 120%;
-        left: 50%;
-        transform: translateX(-50%);
-        @include respond(desktop) {
-          width: 10rem;
-          top: 50%;
-          left: -50%;
-          transform: translate(-50%, -50%);
         }
-      }
-      li a:hover {
-        color: var(--clr-primary-200);
+        &.active::before {
+          content: '';
+          height: 1px;
+          background: var(--clr-primary-100);
+          position: absolute;
+          width: 5rem;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          @include respond(desktop) {
+            width: 10rem;
+            top: 50%;
+            left: -50%;
+          }
+        }
       }
     }
   }
