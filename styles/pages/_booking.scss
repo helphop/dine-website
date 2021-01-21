@@ -30,15 +30,14 @@
     box-shadow: var(--box-shadow-100);
     display: grid;
     align-items: start;
-
+    > div:last-of-type {
+      border-bottom: 1px solid var(--clr-primary-200-op50);
+    }
     ::placeholder {color: var(--clr-primary-200-op50); }
 
     input {
-      border-bottom: 1px solid grey;
-      padding: 0 0 1rem 1rem;
-    }
-    .reserve_details {
-      border-bottom: 1px solid grey;
+      border-bottom: 1px solid var(--clr-primary-200-op50);
+      padding: 0 1rem 1rem 1rem;
     }
 
     .inline-input {
@@ -46,14 +45,17 @@
       grid-auto-flow: column;
       justify-content: space-between;
       align-items: center;
-      label { margin-right: 5rem;}
-      input {max-width: 8rem; }
-      .people-input {font-weight: var(--fw-600);}
-      #people {
-        border-bottom: none;
+      label { margin-right: 4rem;}
+      input {
+        max-width: 8rem;
         text-align: center;
+      }
+
+      input#people {
+         border-bottom: none;
         vertical-align: top;
-        max-width: 2.5rem;
+        padding-right: 0;
+        max-width: 3rem;
       }
     }
   }
