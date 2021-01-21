@@ -502,9 +502,6 @@ a {
   justify-content: center;
   text-align: center;
 }
-.header h1 {
-  max-width: 10ch;
-}
 .header p {
   max-width: 30ch;
 }
@@ -523,6 +520,9 @@ a {
 
 .index .header {
   background-image: url(../../images/homepage/hero-bg-mobile.jpg);
+}
+.index .header h1 {
+  max-width: 10ch;
 }
 @media (min-resolution: 120dpi) {
   .index .header {
@@ -816,12 +816,15 @@ a {
 }
 @media (min-resolution: 120dpi) {
   .booking .header {
-    background-image: url(../../images/booking/);
+    background-image: url(../../images/booking/hero-bg-mobile@2x.jpg);
   }
 }
 .booking .header p {
-  padding-bottom: 20rem;
   max-width: 36ch;
+}
+.booking .header__intro {
+  margin-bottom: 20rem;
+  text-align: center;
 }
 @media only screen and (min-width: 37.5em) {
   .booking .header {
@@ -838,6 +841,11 @@ a {
     justify-self: start;
   }
 }
+@media only screen and (min-width: 37.5em) {
+  .booking .header .btn {
+    display: none;
+  }
+}
 @media only screen and (min-width: 75em) {
   .booking .header {
     background-image: url(../../images/booking/hero-bg-desktop.jpg);
@@ -850,8 +858,13 @@ a {
 }
 @media only screen and (min-width: 75em) {
   .booking .header p {
-    padding-bottom: 0;
     max-width: 30ch;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .booking .header__intro {
+    margin-bottom: 0;
+    text-align: left;
   }
 }
 
@@ -876,10 +889,10 @@ a {
   display: grid;
   align-items: start;
   --br-line-display: none;
+  margin-top: calc(-3.2 * var(--padding-pages-vertical));
 }
 @media only screen and (min-width: 37.5em) {
   .reservation__form {
-    margin-top: calc(-3.2 * var(--padding-pages-vertical));
     max-width: 54rem;
   }
 }

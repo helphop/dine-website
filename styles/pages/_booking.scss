@@ -1,26 +1,26 @@
 .booking .header {
   background-image: url(../../images/booking/hero-bg-mobile.jpg);
-  @include resolution(high) {background-image: url(../../images/booking/);}
-
-  p {
-    padding-bottom: 20rem;
-    max-width: 36ch;
+  @include resolution(high) {background-image: url(../../images/booking/hero-bg-mobile@2x.jpg);}
+  p { max-width: 36ch;}
+  &__intro {
+    margin-bottom: 20rem;
+    text-align: center;
   }
 
   @include respond(tab-land) {
     background-image: url(../../images/booking/hero-bg-tablet.jpg);
      @include resolution(high) {background-image: url(../../images/booking/hero-bg-tablet@2x.jpg);}
-    .logo {
-      justify-self: start;
-    }
+    .logo { justify-self: start;}
+    .btn { display: none;}
   }
 
   @include respond(desktop) {
    background-image: url(../../images/booking/hero-bg-desktop.jpg);
     @include resolution(high) {background-image: url(../../images/booking/hero-bg-desktop@2x.jpg);}
-    p {
-      padding-bottom: 0;
-      max-width: 30ch;
+    p {max-width: 30ch;}
+    &__intro {
+      margin-bottom: 0;
+      text-align: left;
     }
   }
 }
@@ -38,20 +38,16 @@
    justify-content: end;
    }
 
-
   &__form {
     background-color: inherit;
-
     padding: 4.8rem;
     box-shadow: var(--box-shadow-100);
     display: grid;
     align-items: start;
     --br-line-display: none;
-
-    @include respond(tab-land) {
     margin-top: calc(-3.2 * var(--padding-pages-vertical));
-    max-width: 54rem;
-    }
+
+    @include respond(tab-land) { max-width: 54rem; }
 
     @include respond(desktop) {
      align-items: start;
@@ -60,6 +56,7 @@
     --br-line-z-index: -1;
     --br-line-display: block;
     }
+
     > div:last-of-type {
       border-bottom: 1px solid var(--clr-primary-200-op50);
     }
