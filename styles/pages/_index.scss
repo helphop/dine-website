@@ -1,4 +1,33 @@
+.header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+  h1 {max-width: 10ch;}
+  p {max-width: 30ch; }
+
+
+
+  @include respond(desktop) {
+    > .logo {
+       margin-top: 0;
+       position: relative;
+       top: calc(-1 * var(--space-xxl));
+    }
+    justify-content: start;
+    justify-items: start;
+    text-align: left;
+  }
+}
+
+
+
 .index .header {
+
   background-image: url(../../images/homepage/hero-bg-mobile.jpg);
   @include resolution(high) {background-image: url(../../images/homepage/hero-bg-mobile@2x.jpg);}
 
@@ -11,32 +40,12 @@
    background-image: url(../../images/homepage/hero-bg-desktop.jpg);
     @include resolution(high) {background-image: url(../../images/homepage/hero-bg-desktop@2x.jpg);}
   }
+
+  .logo { margin-top: 50%; }
+
 }
 
-.header {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
-  justify-content: center;
-  text-align: center;
-  h1 {max-width: 10ch;}
-  p {max-width: 30ch; }
-  > :first-child {margin-top: 50%;}
 
-  @include respond(desktop) {
-    > :first-child {
-       margin-top: 0;
-       position: relative;
-       top: calc(-1 * var(--space-xxl));
-    }
-    justify-content: start;
-    justify-items: start;
-    text-align: left;
-  }
-}
 
 
 

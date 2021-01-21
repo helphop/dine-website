@@ -2,6 +2,8 @@
   background-image: url(../../images/booking/hero-bg-mobile.jpg);
   @include resolution(high) {background-image: url(../../images/booking/);}
 
+  .logo {justify-self: start;}
+
   @include respond(tab-land) {
     background-image: url(../../images/booking/hero-bg-tablet.jpg);
      @include resolution(high) {background-image: url(../../images/booking/hero-bg-tablet@2x.jpg);}
@@ -11,6 +13,9 @@
    background-image: url(../../images/booking/hero-bg-desktop.jpg);
     @include resolution(high) {background-image: url(../../images/booking/hero-bg-desktop@2x.jpg);}
   }
+
+
+
 }
 
 .reservation {
@@ -23,13 +28,20 @@
   }
 
   &__form {
-    margin-top: calc(-3.4 * var(--padding-pages-vertical));
     background-color: inherit;
     width: 54rem;
     padding: 4.8rem;
     box-shadow: var(--box-shadow-100);
     display: grid;
     align-items: start;
+
+    @include respond(tab-land) {
+      margin-top: calc(-3.4 * var(--padding-pages-vertical));
+    }
+    @include respond(desktop) {
+      align-items: start;
+     margin-top: calc(-3.4 * var(--padding-pages-vertical));
+    }
     > div:last-of-type {
       border-bottom: 1px solid var(--clr-primary-200-op50);
     }
