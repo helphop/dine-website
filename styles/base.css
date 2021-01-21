@@ -496,6 +496,35 @@ body {
   }
 }
 
+.header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.header h1 {
+  max-width: 10ch;
+}
+.header p {
+  max-width: 30ch;
+}
+@media only screen and (min-width: 75em) {
+  .header {
+    justify-content: start;
+    justify-items: start;
+    text-align: left;
+  }
+  .header > .logo {
+    margin-top: 0;
+    position: relative;
+    top: calc(-1 * var(--space-xxl));
+  }
+}
+
 .index .header {
   background-image: url(../../images/homepage/hero-bg-mobile.jpg);
 }
@@ -524,37 +553,8 @@ body {
     background-image: url(../../images/homepage/hero-bg-desktop@2x.jpg);
   }
 }
-
-.header {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.header h1 {
-  max-width: 10ch;
-}
-.header p {
-  max-width: 30ch;
-}
-.header > :first-child {
+.index .header .logo {
   margin-top: 50%;
-}
-@media only screen and (min-width: 75em) {
-  .header {
-    justify-content: start;
-    justify-items: start;
-    text-align: left;
-  }
-  .header > :first-child {
-    margin-top: 0;
-    position: relative;
-    top: calc(-1 * var(--space-xxl));
-  }
 }
 
 .features {
@@ -823,6 +823,9 @@ body {
     background-image: url(../../images/booking/);
   }
 }
+.booking .header .logo {
+  justify-self: start;
+}
 @media only screen and (min-width: 37.5em) {
   .booking .header {
     background-image: url(../../images/booking/hero-bg-tablet.jpg);
@@ -856,13 +859,23 @@ body {
   }
 }
 .reservation__form {
-  margin-top: calc(-3.4 * var(--padding-pages-vertical));
   background-color: inherit;
   width: 54rem;
   padding: 4.8rem;
   box-shadow: var(--box-shadow-100);
   display: grid;
   align-items: start;
+}
+@media only screen and (min-width: 37.5em) {
+  .reservation__form {
+    margin-top: calc(-3.4 * var(--padding-pages-vertical));
+  }
+}
+@media only screen and (min-width: 75em) {
+  .reservation__form {
+    align-items: start;
+    margin-top: calc(-3.4 * var(--padding-pages-vertical));
+  }
 }
 .reservation__form > div:last-of-type {
   border-bottom: 1px solid var(--clr-primary-200-op50);
