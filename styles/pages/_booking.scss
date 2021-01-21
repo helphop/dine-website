@@ -28,13 +28,10 @@
     width: 54rem;
     padding: 4.8rem;
     box-shadow: var(--box-shadow-100);
-
     display: grid;
     align-items: start;
 
-    ::placeholder {
-      color: var(--clr-primary-200-op50);
-    }
+    ::placeholder {color: var(--clr-primary-200-op50); }
 
     input {
       border-bottom: 1px solid grey;
@@ -43,19 +40,15 @@
     .reserve_details {
       border-bottom: 1px solid grey;
     }
-    .input-group {
-      display: grid;
-      grid-auto-flow: column;
-    }
+
     .inline-input {
       display: grid;
       grid-auto-flow: column;
       justify-content: space-between;
       align-items: center;
+      label { margin-right: 5rem;}
       input {max-width: 8rem; }
-      .people-input {
-        font-weight: var(--fw-600);
-      }
+      .people-input {font-weight: var(--fw-600);}
       #people {
         border-bottom: none;
         text-align: center;

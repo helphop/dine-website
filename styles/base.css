@@ -870,15 +870,14 @@ body {
 .reservation__form .reserve_details {
   border-bottom: 1px solid grey;
 }
-.reservation__form .input-group {
-  display: grid;
-  grid-auto-flow: column;
-}
 .reservation__form .inline-input {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
   align-items: center;
+}
+.reservation__form .inline-input label {
+  margin-right: 5rem;
 }
 .reservation__form .inline-input input {
   max-width: 8rem;
