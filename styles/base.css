@@ -444,6 +444,7 @@ body {
 }
 
 .btn--icon {
+  padding: var(--space-md);
   --fg-btn: var(--clr-primary-100);
   --bg-btn: transparent;
   border: none;
@@ -869,14 +870,25 @@ body {
 .reservation__form .reserve_details {
   border-bottom: 1px solid grey;
 }
+.reservation__form .input-group {
+  display: grid;
+  grid-auto-flow: column;
+}
 .reservation__form .inline-input {
   display: grid;
   grid-auto-flow: column;
+  justify-content: space-between;
   align-items: center;
 }
 .reservation__form .inline-input input {
   max-width: 8rem;
 }
+.reservation__form .inline-input .people-input {
+  font-weight: var(--fw-600);
+}
 .reservation__form .inline-input #people {
   border-bottom: none;
+  text-align: center;
+  vertical-align: top;
+  max-width: 2.5rem;
 }
