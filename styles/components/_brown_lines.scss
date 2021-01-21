@@ -9,5 +9,6 @@
       top: var(--br-line-top, 0);
       left: var(--br-line-left, 0);
       display: var(--br-line-display, block);
+       z-index: var(--br-line-z-index, 0);
     }
   }
