@@ -4,6 +4,8 @@
   text-transform: uppercase;
   text-align: center;
   display: grid;
+  align-items: start;
+  align-content: start;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   row-gap: 4rem;
   justify-items: center;
@@ -15,5 +17,9 @@
     justify-items: start;
     column-gap: 2rem;
     .logo { grid-row: span 2; }
+  }
+
+  @include respond(desktop) {
+    row-gap: 0;
   }
 }

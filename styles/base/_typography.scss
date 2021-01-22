@@ -24,7 +24,7 @@ html {
 
 }
 
-:root, * {
+:root {
     // type scale !!need to recalculate as using a different scale for smaller screen sizes
   --text-xs: calc((var(--text-unit) / var(--text-scale-ratio)) / var(--text-scale-ratio)); // 1.042rem | 1.152rem
   --text-sm: calc(var(--text-xs) * var(--text-scale-ratio)); // 1.250rem |  1.44rem
