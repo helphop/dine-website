@@ -1,12 +1,13 @@
 .btn {
   display: inline-block;
-  padding: var(--space-md) var(--space-xl);
+  padding: var(--space-unit) var(--space-xl);
   border: 1px solid var(--btn-bd, var(--clr-primary-200));
   background: var(--bg-btn, var(--clr-primary-200));
   color: var(--fg-btn, var(--clr-neutral-100));
   transition: all .4s ease-in-out;
   text-transform: uppercase;
   letter-spacing: 1.4px;
+  font-size: 1.4rem;
 
   &:hover {
   background: var(--btn-bg-hover, var(--clr-neutral-100));

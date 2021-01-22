@@ -418,13 +418,14 @@ a {
 
 .btn {
   display: inline-block;
-  padding: var(--space-md) var(--space-xl);
+  padding: var(--space-unit) var(--space-xl);
   border: 1px solid var(--btn-bd, var(--clr-primary-200));
   background: var(--bg-btn, var(--clr-primary-200));
   color: var(--fg-btn, var(--clr-neutral-100));
   transition: all 0.4s ease-in-out;
   text-transform: uppercase;
   letter-spacing: 1.4px;
+  font-size: 1.4rem;
 }
 .btn:hover {
   background: var(--btn-bg-hover, var(--clr-neutral-100));
@@ -896,7 +897,7 @@ a {
   display: grid;
   align-items: start;
   --br-line-display: none;
-  margin-top: calc(-3.2 * var(--padding-pages-vertical));
+  margin-top: calc(-3.5 * var(--padding-pages-vertical));
 }
 @media only screen and (min-width: 37.5em) {
   .reservation__form {
