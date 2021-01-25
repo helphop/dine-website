@@ -51,7 +51,7 @@
 
     @include respond(desktop) {
      align-items: start;
-    --br-line-top: 53rem;
+    --br-line-top: calc(3.2 * var(--padding-pages-vertical));
     --br-line-left: -8rem;
     --br-line-z-index: -1;
     --br-line-display: block;
@@ -71,11 +71,17 @@
       display: grid;
       grid-auto-flow: column;
       justify-content: space-between;
+      gap: 1rem;
       align-items: center;
-      label { margin-right: 4rem;}
+      label {
+        margin-right: 4rem;
+        grid-row: 1;
+        grid-column: 1 / span 4;
+      }
       input {
         max-width: 8rem;
         text-align: center;
+        grid-row: 2;
       }
 
       input#people {
@@ -83,6 +89,10 @@
         vertical-align: top;
         padding-right: 0;
         max-width: 3rem;
+      }
+      @include respond(tab-land) {
+        label {grid-column: 1 / span 1;}
+        input {grid-row: 1;}
       }
     }
   }

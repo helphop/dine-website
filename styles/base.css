@@ -520,7 +520,6 @@ a {
     text-align: left;
   }
   .header > .logo {
-    margin-top: 0;
     position: relative;
     top: calc(-1 * var(--space-xxl));
   }
@@ -531,6 +530,9 @@ a {
 }
 .index .header h1 {
   max-width: 10ch;
+}
+.index .header .logo {
+  margin-top: 50%;
 }
 @media (min-resolution: 120dpi) {
   .index .header {
@@ -557,8 +559,10 @@ a {
     background-image: url(../../images/homepage/hero-bg-desktop@2x.jpg);
   }
 }
-.index .header .logo {
-  margin-top: 50%;
+@media only screen and (min-width: 75em) {
+  .index .header .logo {
+    margin-top: 0;
+  }
 }
 
 .features {
@@ -907,7 +911,7 @@ a {
 @media only screen and (min-width: 75em) {
   .reservation__form {
     align-items: start;
-    --br-line-top: 53rem;
+    --br-line-top: calc(3.2 * var(--padding-pages-vertical));
     --br-line-left: -8rem;
     --br-line-z-index: -1;
     --br-line-display: block;
@@ -927,18 +931,30 @@ a {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
+  gap: 1rem;
   align-items: center;
 }
 .reservation__form .inline-input label {
   margin-right: 4rem;
+  grid-row: 1;
+  grid-column: 1/span 4;
 }
 .reservation__form .inline-input input {
   max-width: 8rem;
   text-align: center;
+  grid-row: 2;
 }
 .reservation__form .inline-input input#people {
   border-bottom: none;
   vertical-align: top;
   padding-right: 0;
   max-width: 3rem;
+}
+@media only screen and (min-width: 37.5em) {
+  .reservation__form .inline-input label {
+    grid-column: 1/span 1;
+  }
+  .reservation__form .inline-input input {
+    grid-row: 1;
+  }
 }
