@@ -39,7 +39,14 @@
           <label for="date">Pick a time</label>
           <input type="text" name="hour" id="hour" placeholder="09">
           <input type="text" name="minute" id="day" placeholder="00">
-          <input type="text" name="ampm" id="ampm" placeholder="AM">
+          <div class="ampm">
+            <input type="text" name="ampm" id="ampm" value="AM" readonly>
+            <img class="ampm__arrow" src="images/icons/icon-arrow.svg" alt="down arrow">
+            <ul class="ampm__list box-shadow">
+              <li class="selected">AM</li>
+              <li>PM</li>
+            </ul>
+          </div>
         </div>
 
         <div class="inline-input">

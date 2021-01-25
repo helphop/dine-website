@@ -51,7 +51,7 @@
 
     @include respond(desktop) {
      align-items: start;
-    --br-line-top: 53rem;
+    --br-line-top: calc(3.2 * var(--padding-pages-vertical));
     --br-line-left: -8rem;
     --br-line-z-index: -1;
     --br-line-display: block;
@@ -71,11 +71,17 @@
       display: grid;
       grid-auto-flow: column;
       justify-content: space-between;
+      gap: 1rem;
       align-items: center;
-      label { margin-right: 4rem;}
+      label {
+        margin-right: 4rem;
+        grid-row: 1;
+        grid-column: 1 / span 4;
+      }
       input {
         max-width: 8rem;
         text-align: center;
+        grid-row: 2;
       }
 
       input#people {
@@ -83,6 +89,66 @@
         vertical-align: top;
         padding-right: 0;
         max-width: 3rem;
+      }
+      @include respond(tab-land) {
+        label {grid-column: 1 / span 1;}
+        input {grid-row: 1;}
+      }
+    }
+
+    .ampm {
+      position: relative;
+
+      input {
+        cursor: pointer;
+        text-align: left;
+      }
+
+      &__arrow {
+        position: absolute;
+        top: 20%;
+        right: 1rem;
+        transition: all .2s ease;
+      }
+
+      &:hover  .ampm__arrow {
+        transform: rotate(180deg);
+      }
+
+      &:hover  .ampm__list {
+        opacity: 1;
+      }
+
+      &__list {
+        opacity: 0;
+        position: absolute;
+        top: 60%;
+        display: grid;
+        justify-items: end;
+        justify-content: center;
+        background: var(--clr-neutral-100);
+        transition: opacity 0.4s ease-in-out;
+
+        li {
+          width: 5.8rem;
+          padding: 0.5rem 2rem;
+          box-sizing: content-box;
+          &:hover {background-color: adjustHSLA(var(--clr-secondary-100), $opacity: .2);}
+        }
+
+        li::before {
+          content: '';
+          display: inline-block;
+          background-image: url(../../images/icons/icon-check.svg);
+          background-repeat: no-repeat;
+          height: 1.2rem;
+          width: 1.2rem;
+          margin-right: 1rem;
+          opacity: 0;
+        }
+        li.selected::before {
+          opacity: 1;
+        }
       }
     }
   }

@@ -110,7 +110,7 @@ $breakpoint argument choices:
   --clr-secondary-300-s40: hsl(var(--secondary-hue-300), 42%, 13%);
   --clr-secondary-300-l50: hsl(var(--secondary-hue-300), 30%, 19.5%);
   --clr-secondary-300-s50: hsl(var(--secondary-hue-300), 45%, 13%);
-  --box-shadow-100: 1rem 3rem 6rem -2rem hsla(calc(var(--clr-primary-200-h) * 1), calc(var(--clr-primary-200-s) * 1), calc(var(--clr-primary-200-l) * 1), 0.3);
+  --box-shadow-100: -1rem 2rem 5rem 0rem hsla(calc(var(--clr-primary-200-h) * 1), calc(var(--clr-primary-200-s) * 1), calc(var(--clr-primary-200-l) * 1), 0.3);
   --br: 3rem;
   --space-unit-rem: 1.6rem;
   --space-unit: 1em;
@@ -520,7 +520,6 @@ a {
     text-align: left;
   }
   .header > .logo {
-    margin-top: 0;
     position: relative;
     top: calc(-1 * var(--space-xxl));
   }
@@ -531,6 +530,9 @@ a {
 }
 .index .header h1 {
   max-width: 10ch;
+}
+.index .header .logo {
+  margin-top: 50%;
 }
 @media (min-resolution: 120dpi) {
   .index .header {
@@ -557,8 +559,10 @@ a {
     background-image: url(../../images/homepage/hero-bg-desktop@2x.jpg);
   }
 }
-.index .header .logo {
-  margin-top: 50%;
+@media only screen and (min-width: 75em) {
+  .index .header .logo {
+    margin-top: 0;
+  }
 }
 
 .features {
@@ -907,7 +911,7 @@ a {
 @media only screen and (min-width: 75em) {
   .reservation__form {
     align-items: start;
-    --br-line-top: 53rem;
+    --br-line-top: calc(3.2 * var(--padding-pages-vertical));
     --br-line-left: -8rem;
     --br-line-z-index: -1;
     --br-line-display: block;
@@ -927,18 +931,80 @@ a {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
+  gap: 1rem;
   align-items: center;
 }
 .reservation__form .inline-input label {
   margin-right: 4rem;
+  grid-row: 1;
+  grid-column: 1/span 4;
 }
 .reservation__form .inline-input input {
   max-width: 8rem;
   text-align: center;
+  grid-row: 2;
 }
 .reservation__form .inline-input input#people {
   border-bottom: none;
   vertical-align: top;
   padding-right: 0;
   max-width: 3rem;
+}
+@media only screen and (min-width: 37.5em) {
+  .reservation__form .inline-input label {
+    grid-column: 1/span 1;
+  }
+  .reservation__form .inline-input input {
+    grid-row: 1;
+  }
+}
+.reservation__form .ampm {
+  position: relative;
+}
+.reservation__form .ampm input {
+  cursor: pointer;
+  text-align: left;
+}
+.reservation__form .ampm__arrow {
+  position: absolute;
+  top: 20%;
+  right: 1rem;
+  transition: all 0.2s ease;
+}
+.reservation__form .ampm:hover .ampm__arrow {
+  transform: rotate(180deg);
+}
+.reservation__form .ampm:hover .ampm__list {
+  opacity: 1;
+}
+.reservation__form .ampm__list {
+  opacity: 0;
+  position: absolute;
+  top: 60%;
+  display: grid;
+  justify-items: end;
+  justify-content: center;
+  background: var(--clr-neutral-100);
+  transition: opacity 0.4s ease-in-out;
+}
+.reservation__form .ampm__list li {
+  width: 5.8rem;
+  padding: 0.5rem 2rem;
+  box-sizing: content-box;
+}
+.reservation__form .ampm__list li:hover {
+  background-color: hsla(calc(var(--clr-secondary-100-h) * 1), calc(var(--clr-secondary-100-s) * 1), calc(var(--clr-secondary-100-l) * 1), 0.2);
+}
+.reservation__form .ampm__list li::before {
+  content: "";
+  display: inline-block;
+  background-image: url(../../images/icons/icon-check.svg);
+  background-repeat: no-repeat;
+  height: 1.2rem;
+  width: 1.2rem;
+  margin-right: 1rem;
+  opacity: 0;
+}
+.reservation__form .ampm__list li.selected::before {
+  opacity: 1;
 }
