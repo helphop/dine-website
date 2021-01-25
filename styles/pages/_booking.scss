@@ -106,7 +106,7 @@
 
       &__arrow {
         position: absolute;
-        top: 20%;
+        top: 19%;
         right: 1rem;
         transition: all .2s ease;
       }
@@ -129,7 +129,7 @@
         justify-items: end;
         justify-content: center;
         background: var(--clr-neutral-100);
-        transition: opacity 0.4s ease-in-out;
+        transition: all 0.2s ease-in-out;
 
         li {
           width: 5.8rem;
