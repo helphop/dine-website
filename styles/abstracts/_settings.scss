@@ -32,7 +32,7 @@
   @include defineColorHSL(--clr-secondary-300, var(--secondary-hue-300), 30%, 13%);
 
   //shadows
-  --box-shadow-100: 1rem 3rem 6rem -2rem #{adjustHSLA(var(--clr-primary-200), $opacity: 0.3)};
+  --box-shadow-100: -1rem 2rem 5rem 0rem #{adjustHSLA(var(--clr-primary-200), $opacity: 0.3)};
 
   --br: 3rem;
 
