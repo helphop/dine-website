@@ -1,24 +1,20 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-  const dec_btn = document.getElementById("dec");
-  const inc_btn = document.getElementById("inc");
   const people_count = document.getElementById("people");
+  const counter_container = document.querySelector('.counter');
   let count = parseInt(people_count.value);
+  let updateCount = () => people_count.value = count;
 
-  dec_btn.addEventListener('click', (e)=> {
-    e.preventDefault();
-    if(count > 0) {
-      count --;
-      people_count.value = count;
+  counter_container.addEventListener('click', (event)=> {
+    event.preventDefault();
+    const element = event.target;
+    if(element.nodeName === 'BUTTON') {
+      if(element.id === "inc" && count < 20) count ++
+      else if(element.id === "dec" && count > 0) count --
     }
+    updateCount();
   })
 
-  inc_btn.addEventListener('click', (e)=> {
-    e.preventDefault();
-    if(count < 20) {
-      count ++;
-      people_count.value = count;
-    }
-  })
+
 
 });

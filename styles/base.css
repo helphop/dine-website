@@ -948,7 +948,7 @@ a {
   border-bottom: none;
   vertical-align: top;
   padding-right: 0;
-  max-width: 3.3rem;
+  max-width: 3.7rem;
 }
 @media only screen and (min-width: 37.5em) {
   .reservation__form .inline-input label {
