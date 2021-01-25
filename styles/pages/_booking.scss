@@ -88,7 +88,7 @@
          border-bottom: none;
         vertical-align: top;
         padding-right: 0;
-        max-width: 3rem;
+        max-width: 3.7rem;
       }
       @include respond(tab-land) {
         label {grid-column: 1 / span 1;}
@@ -106,7 +106,7 @@
 
       &__arrow {
         position: absolute;
-        top: 20%;
+        top: 19%;
         right: 1rem;
         transition: all .2s ease;
       }
@@ -117,17 +117,19 @@
 
       &:hover  .ampm__list {
         opacity: 1;
+        z-index: 100;
       }
 
       &__list {
         opacity: 0;
+        z-index: -1;
         position: absolute;
         top: 60%;
         display: grid;
         justify-items: end;
         justify-content: center;
         background: var(--clr-neutral-100);
-        transition: opacity 0.4s ease-in-out;
+        transition: all 0.2s ease-in-out;
 
         li {
           width: 5.8rem;
