@@ -40,18 +40,17 @@
 
   &__form {
     background-color: inherit;
-    padding: 4.8rem;
+    padding: 2.8rem;
     box-shadow: var(--box-shadow-100);
     display: grid;
     align-items: start;
     --br-line-display: none;
     margin-top: calc(-3.5 * var(--padding-pages-vertical));
 
-    @include respond(tab-land) { max-width: 54rem; }
+    @include respond(tab-land) {padding: 4rem;}
 
     @include respond(desktop) {
-     align-items: start;
-    --br-line-top: calc(3.2 * var(--padding-pages-vertical));
+    --br-line-top: calc(3.5 * var(--padding-pages-vertical));
     --br-line-left: -8rem;
     --br-line-z-index: -1;
     --br-line-display: block;
@@ -64,11 +63,11 @@
     input {
       width: 100%;
       border-bottom: 1px solid var(--clr-error, var(--clr-primary-200-op50));
+      padding: 0 1rem 1rem 1rem;
     }
 
-    input,
-    .input-group .error__message {
-    padding: 0 1rem 1rem 1rem;
+    .input-group > .error__message {
+    padding-left: 1rem;
     }
 
     ::placeholder {
@@ -77,42 +76,33 @@
 
     .error__message {
       font-size: var(--text-xxs);
-      margin-top: var(--space-sm);
+      display: none;
     }
 
-
-
+    .error .error__message {
+      display: block;
+    }
 
     .inline-input {
-      color: var(--clr-error, inherit);
-      display: grid;
+     display: grid;
       grid-auto-flow: column;
-      justify-content: space-between;
+     align-items: center;
+     justify-content: space-between;
       column-gap: 2rem;
-      align-items: center;
-
-      legend {
-        grid-row: 1;
-        grid-column: 1 / span 2;
-        color: var(--error, inherit);
-      }
-
-      legend .error__message {
-      margin-top: 0
-      }
 
       fieldset {
         grid-row: 2;
         display: grid;
         grid-auto-flow: column;
         gap: 1rem;
-        min-inline-size: max-content;
+        @include respond(tab-land) {
+          grid-row: 1;
+        }
       }
 
       input {
         max-width: 8rem;
         text-align: center;
-        grid-row: 2;
       }
 
       input#people {
@@ -121,15 +111,10 @@
         padding-right: 0;
         max-width: 3.7rem;
       }
-      @include respond(tab-land) {
-        legend {grid-column: 1 / span 1;}
-        fieldset {grid-row: 1;}
-      }
     }
 
     .ampm {
       position: relative;
-
       input {
         cursor: pointer;
         text-align: left;
@@ -184,8 +169,7 @@
         }
       }
     }
-
-    > div.counter {
+    .counter {
       border-bottom: 1px solid var(--clr-primary-200-op50);
     }
   }
