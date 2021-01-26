@@ -324,6 +324,10 @@ h3, .h3 {
   font-weight: var(--fw-600);
 }
 
+.error {
+  --clr-error: var(--clr-accent-100);
+}
+
 *,
 *::before,
 *::after {
@@ -378,6 +382,13 @@ textarea {
 
 input:focus {
   outline: 0;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
 }
 
 a {
@@ -918,8 +929,8 @@ a {
     --br-line-display: block;
   }
 }
-.reservation__form > div.counter {
-  border-bottom: 1px solid var(--clr-primary-200-op50);
+.reservation__form .input-group {
+  color: var(--clr-error);
 }
 .reservation__form input {
   width: 100%;
@@ -932,29 +943,32 @@ a {
 .reservation__form ::placeholder {
   color: var(--clr-error, var(--clr-primary-200-op50));
 }
-.reservation__form .error {
-  --clr-error: var(--clr-accent-100);
-}
 .reservation__form .error__message {
   font-size: var(--text-xxs);
   margin-top: var(--space-sm);
-  color: var(--clr-error);
-}
-.reservation__form legend .error__message {
-  margin-top: 0;
 }
 .reservation__form .inline-input {
+  color: var(--clr-error, inherit);
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
-  gap: 1rem;
+  column-gap: 2rem;
   align-items: center;
 }
-.reservation__form .inline-input label {
-  margin-right: 4rem;
+.reservation__form .inline-input legend {
   grid-row: 1;
-  grid-column: 1/span 4;
+  grid-column: 1/span 2;
   color: var(--error, inherit);
+}
+.reservation__form .inline-input legend .error__message {
+  margin-top: 0;
+}
+.reservation__form .inline-input fieldset {
+  grid-row: 2;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  min-inline-size: max-content;
 }
 .reservation__form .inline-input input {
   max-width: 8rem;
@@ -968,10 +982,10 @@ a {
   max-width: 3.7rem;
 }
 @media only screen and (min-width: 37.5em) {
-  .reservation__form .inline-input label {
+  .reservation__form .inline-input legend {
     grid-column: 1/span 1;
   }
-  .reservation__form .inline-input input {
+  .reservation__form .inline-input fieldset {
     grid-row: 1;
   }
 }
@@ -1026,4 +1040,7 @@ a {
 }
 .reservation__form .ampm__list li.selected::before {
   opacity: 1;
+}
+.reservation__form > div.counter {
+  border-bottom: 1px solid var(--clr-primary-200-op50);
 }
