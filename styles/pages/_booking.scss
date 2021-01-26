@@ -57,31 +57,37 @@
     --br-line-display: block;
     }
 
-    > div:last-of-type {
+    > div.counter {
       border-bottom: 1px solid var(--clr-primary-200-op50);
     }
-    ::placeholder {color: var(--error, var(--clr-primary-200-op50)); }
 
     input {
-      border-bottom: 1px solid var(--error, var(--clr-primary-200-op50));
-      padding: 0 1rem 1rem 1rem;
+      width: 100%;
+      border-bottom: 1px solid var(--clr-error, var(--clr-primary-200-op50));
+    }
+
+    input,
+    .input-group .error__message {
+    padding: 0 1rem 1rem 1rem;
+    }
+
+    ::placeholder {
+      color: var(--clr-error, var(--clr-primary-200-op50));
     }
 
     .error {
-      --error: var(--clr-accent-100);
+      --clr-error: var(--clr-accent-100);
     }
 
-    .error_message {
+    .error__message {
       font-size: var(--text-xxs);
-      color: var(--clr-accent-100);
-      margin-top: 1rem;
-      display: inline-block;
+      margin-top: var(--space-sm);
+       color: var(--clr-error);
     }
 
-    .hide {
-      display: none;
+    legend .error__message {
+      margin-top: 0
     }
-
 
     .inline-input {
       display: grid;

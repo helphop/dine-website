@@ -918,27 +918,30 @@ a {
     --br-line-display: block;
   }
 }
-.reservation__form > div:last-of-type {
+.reservation__form > div.counter {
   border-bottom: 1px solid var(--clr-primary-200-op50);
 }
-.reservation__form ::placeholder {
-  color: var(--error, var(--clr-primary-200-op50));
-}
 .reservation__form input {
-  border-bottom: 1px solid var(--error, var(--clr-primary-200-op50));
+  width: 100%;
+  border-bottom: 1px solid var(--clr-error, var(--clr-primary-200-op50));
+}
+.reservation__form input,
+.reservation__form .input-group .error__message {
   padding: 0 1rem 1rem 1rem;
 }
+.reservation__form ::placeholder {
+  color: var(--clr-error, var(--clr-primary-200-op50));
+}
 .reservation__form .error {
-  --error: var(--clr-accent-100);
+  --clr-error: var(--clr-accent-100);
 }
-.reservation__form .error_message {
+.reservation__form .error__message {
   font-size: var(--text-xxs);
-  color: var(--clr-accent-100);
-  margin-top: 1rem;
-  display: inline-block;
+  margin-top: var(--space-sm);
+  color: var(--clr-error);
 }
-.reservation__form .hide {
-  display: none;
+.reservation__form legend .error__message {
+  margin-top: 0;
 }
 .reservation__form .inline-input {
   display: grid;

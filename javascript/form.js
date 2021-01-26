@@ -34,18 +34,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const formInputs = document.querySelectorAll('input');
 
-  [...formInputs].forEach(input => {
-    if (input.value === "") {
-      if(input.id === "email" || input.id === "name") {
-        input.classList.add("error");
-        input.insertAdjacentHTML('afterend', `<p class="error_message">This field is required.</p>`);
-      }
-      else {
-        input.parentNode.classList.add("error");
-        console.log(input.parentNode.querySelector('legend'));
-        input.parentNode.querySelector('legend').insertAdjacentHTML('beforeend', `<p class="error_message">This field is required.</p>`);
-      }
-    }
-  })
+  // [...formInputs].forEach(input => {
+  //   if (input.value === "") {
+  //     if(input.id === "email" || input.id === "name") {
+  //       input.classList.add("error");
+  //       input.insertAdjacentHTML('afterend', `<p class="error_message">This field is required.</p>`);
+  //     }
+  //     else {
+  //       input.parentNode.classList.add("error");
+  //       console.log(input.parentNode.querySelector('legend'));
+  //       input.parentNode.querySelector('legend').insertAdjacentHTML('beforeend', `<p class="error_message">This field is required.</p>`);
+  //     }
+  //   }
+  // })
 
 });
