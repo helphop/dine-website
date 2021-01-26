@@ -22,7 +22,7 @@ $breakpoint argument choices:
   --clr-marker-secondary-300: hsl(234, 30%, 13%);
   --secondary-hue-100: 234;
   --clr-accent-100: hsl(0, 43%, 50%);
-  --clr-accent-100: hsla(0, 43%, 50%, 0.5);
+  --clr-accent-100-op50: hsla(0, 43%, 50%, 0.5);
   --clr-neutral-100: hsl(0, 100%, 100%);
   --clr-primary-200-op50: hsla(calc(var(--clr-primary-200-h) * 1), calc(var(--clr-primary-200-s) * 1), calc(var(--clr-primary-200-l) * 1), 0.5);
   --clr-secondary-100-op7: hsla(calc(var(--clr-secondary-100-h) * 1), calc(var(--clr-secondary-100-s) * 1), calc(var(--clr-secondary-100-l) * 1), 0.07);
@@ -163,7 +163,8 @@ html {
 }
 
 :root {
-  --text-xs: calc((var(--text-unit) / var(--text-scale-ratio)) / var(--text-scale-ratio));
+  --text-xxs: calc((var(--text-unit) / var(--text-scale-ratio)) / var(--text-scale-ratio) / var(--text-scale-ratio));
+  --text-xs: calc(var(--text-xxs) * var(--text-scale-ratio));
   --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
   --text-md: calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio));
   --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
@@ -921,11 +922,23 @@ a {
   border-bottom: 1px solid var(--clr-primary-200-op50);
 }
 .reservation__form ::placeholder {
-  color: var(--clr-primary-200-op50);
+  color: var(--error, var(--clr-primary-200-op50));
 }
 .reservation__form input {
-  border-bottom: 1px solid var(--clr-primary-200-op50);
+  border-bottom: 1px solid var(--error, var(--clr-primary-200-op50));
   padding: 0 1rem 1rem 1rem;
+}
+.reservation__form .error {
+  --error: var(--clr-accent-100);
+}
+.reservation__form .error_message {
+  font-size: var(--text-xxs);
+  color: var(--clr-accent-100);
+  margin-top: 1rem;
+  display: inline-block;
+}
+.reservation__form .hide {
+  display: none;
 }
 .reservation__form .inline-input {
   display: grid;
@@ -938,6 +951,7 @@ a {
   margin-right: 4rem;
   grid-row: 1;
   grid-column: 1/span 4;
+  color: var(--error, inherit);
 }
 .reservation__form .inline-input input {
   max-width: 8rem;

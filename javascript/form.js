@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const element = event.target;
     if(element.nodeName === 'BUTTON') {
       if(element.id === "inc" && count < 20) count ++
-      else if(element.id === "dec" && count > 0) count --
+      else if(element.id === "dec" && count > 2) count --
     }
     updateCount();
   })
@@ -29,6 +29,23 @@ document.addEventListener("DOMContentLoaded", () => {
     [...ampmList.children].forEach(listItem => listItem.classList.remove('selected'))
     element.classList.add('selected')
     ampmInput.value = element.innerText;
+  })
+
+
+  const formInputs = document.querySelectorAll('input');
+
+  [...formInputs].forEach(input => {
+    if (input.value === "") {
+      if(input.id === "email" || input.id === "name") {
+        input.classList.add("error");
+        input.insertAdjacentHTML('afterend', `<p class="error_message">This field is required.</p>`);
+      }
+      else {
+        input.parentNode.classList.add("error");
+        console.log(input.parentNode.querySelector('legend'));
+        input.parentNode.querySelector('legend').insertAdjacentHTML('beforeend', `<p class="error_message">This field is required.</p>`);
+      }
+    }
   })
 
 });

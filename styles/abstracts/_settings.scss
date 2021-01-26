@@ -18,7 +18,7 @@
 
 
   --clr-accent-100: hsl(0, 43%, 50%);
-  --clr-accent-100: hsla(0, 43%, 50%, 0.5);
+  --clr-accent-100-op50: hsla(0, 43%, 50%, 0.5);
   --clr-neutral-100: hsl(0, 100%, 100%); // text
 
   --clr-primary-200-op50: #{adjustHSLA(var(--clr-primary-200), $opacity: 0.5)}; //placeholder text and lines

@@ -60,12 +60,28 @@
     > div:last-of-type {
       border-bottom: 1px solid var(--clr-primary-200-op50);
     }
-    ::placeholder {color: var(--clr-primary-200-op50); }
+    ::placeholder {color: var(--error, var(--clr-primary-200-op50)); }
 
     input {
-      border-bottom: 1px solid var(--clr-primary-200-op50);
+      border-bottom: 1px solid var(--error, var(--clr-primary-200-op50));
       padding: 0 1rem 1rem 1rem;
     }
+
+    .error {
+      --error: var(--clr-accent-100);
+    }
+
+    .error_message {
+      font-size: var(--text-xxs);
+      color: var(--clr-accent-100);
+      margin-top: 1rem;
+      display: inline-block;
+    }
+
+    .hide {
+      display: none;
+    }
+
 
     .inline-input {
       display: grid;
@@ -77,6 +93,7 @@
         margin-right: 4rem;
         grid-row: 1;
         grid-column: 1 / span 4;
+        color: var(--error, inherit);
       }
       input {
         max-width: 8rem;
