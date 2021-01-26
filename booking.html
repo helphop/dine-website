@@ -36,22 +36,25 @@
           <p class="error__message">This field is required.</p>
         </div>
 
-        <div class="input-group inline-input flow-content-xsmall ">
-          <legend>Pick a date
-            <p class="error__message">This field is incomplete.</p>
-          </legend>
-          <fieldset>
-            <input type="text" name="month" id="month" placeholder="MM">
-            <input type="text" name="day" id="day" placeholder="DD">
-            <input type="text" name="year" id="year" placeholder="YYYY">
+        <div class="input-group error">
+          <fieldset role="group" aria-labelledby="heading" class="inline-input flow-content-xsmall">
+            <div>
+              <h4 class="fw-300">Pick a date</h4>
+              <p class="error__message">This field is incomplete.</p>
+            </div>
+
+            <div class="date_fields">
+              <input type="text" name="month" id="month" placeholder="MM">
+              <input type="text" name="day" id="day" placeholder="DD">
+              <input type="text" name="year" id="year" placeholder="YYYY">
+            </div>
           </fieldset>
         </div>
 
-        <div class="input-group inline-input flow-content-xsmall">
-          <legend>Pick a time
-            <p class="error__message">This field is incomplete.</p>
-          </legend>
+        <div class="input-group flow-content-xsmall">
           <fieldset>
+            <p>Pick a time</p>
+            <p class="error__message">This field is incomplete.</p>
             <input type="text" name="hour" id="hour" placeholder="09">
             <input type="text" name="minute" id="day" placeholder="00">
             <div class="ampm">

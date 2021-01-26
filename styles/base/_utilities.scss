@@ -109,6 +109,10 @@
     font-weight: var(--fw-600);
   }
 
-      .error {
-      --clr-error: var(--clr-accent-100);
-    }
+  .fw-300 {
+    font-weight: var(--fw-300);
+  }
+
+  .error {
+    --clr-error: var(--clr-accent-100);
+  }

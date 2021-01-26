@@ -214,6 +214,10 @@ h3, .h3 {
   }
 }
 
+h4 {
+  font-size: var(--text-base-size);
+}
+
 .flow-content > * + * {
   margin-top: var(--space-unit-rem);
 }
@@ -324,6 +328,10 @@ h3, .h3 {
   font-weight: var(--fw-600);
 }
 
+.fw-300 {
+  font-weight: var(--fw-300);
+}
+
 .error {
   --clr-error: var(--clr-accent-100);
 }
@@ -345,6 +353,7 @@ body,
 h1,
 h2,
 h3,
+h4,
 p,
 dl,
 dd,
@@ -908,6 +917,7 @@ a {
 }
 .reservation__form {
   background-color: inherit;
+  max-width: 54rem;
   padding: 2.8rem;
   box-shadow: var(--box-shadow-100);
   display: grid;
@@ -953,20 +963,17 @@ a {
 .reservation__form .inline-input {
   display: grid;
   grid-auto-flow: column;
-  justify-content: space-between;
-  column-gap: 2rem;
+  column-gap: 1rem;
 }
-.reservation__form .inline-input legend {
-  align-self: end;
-}
-.reservation__form .inline-input fieldset {
-  grid-row: 2;
+.reservation__form .inline-input .date_fields {
   display: grid;
   grid-auto-flow: column;
-  gap: 1rem;
+  justify-content: space-between;
+  grid-row: 2;
+  gap: 2rem;
 }
 @media only screen and (min-width: 37.5em) {
-  .reservation__form .inline-input fieldset {
+  .reservation__form .inline-input .date_fields {
     grid-row: 1;
   }
 }
@@ -979,6 +986,10 @@ a {
   vertical-align: top;
   padding-right: 0;
   max-width: 3.7rem;
+}
+.reservation__form .counter {
+  justify-content: space-between;
+  border-bottom: 1px solid var(--clr-primary-200-op50);
 }
 .reservation__form .ampm {
   position: relative;
@@ -1031,7 +1042,4 @@ a {
 }
 .reservation__form .ampm__list li.selected::before {
   opacity: 1;
-}
-.reservation__form .counter {
-  border-bottom: 1px solid var(--clr-primary-200-op50);
 }
