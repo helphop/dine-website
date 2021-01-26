@@ -24,19 +24,19 @@
         </div>
 
     <section class="reservation">
-      <form id="booking" class="reservation__form brown-lines" action="book" method="post">
+      <form id="booking" class="reservation__form brown-lines flow-content" action="book" method="post">
 
         <div class="input-group flow-content-xsmall">
           <input type="text" name="name" id="name" placeholder="Name">
           <p class="error__message">This field is required.</p>
         </div>
 
-        <div class="input-groupflow-content-xsmall">
+        <div class="input-group flow-content-xsmall">
           <input type="email" name="email" id="email" placeholder="Email">
           <p class="error__message">This field is required.</p>
         </div>
 
-        <div class="input-group flow-content-xsmall inline-input">
+        <div class="input-group inline-input flow-content-xsmall ">
           <legend>Pick a date
             <p class="error__message">This field is incomplete.</p>
           </legend>
@@ -55,7 +55,7 @@
             <input type="text" name="hour" id="hour" placeholder="09">
             <input type="text" name="minute" id="day" placeholder="00">
             <div class="ampm">
-              <input type="text" name="ampm" id="ampm_input" value="AM" readonly>
+              <input type="text" name="ampm" id="ampm_input" value="AM" readonly="true">
               <img class="ampm__arrow" src="images/icons/icon-arrow.svg" alt="down arrow">
               <ul class="ampm__list box-shadow">
                 <li class="selected">AM</li>

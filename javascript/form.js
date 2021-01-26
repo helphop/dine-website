@@ -32,20 +32,20 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
 
-  const formInputs = document.querySelectorAll('input');
+  const inputGroups = document.querySelectorAll('.input-group');
+  const submit_btn = document.querySelector('button[type="submit"]');
 
-  // [...formInputs].forEach(input => {
-  //   if (input.value === "") {
-  //     if(input.id === "email" || input.id === "name") {
-  //       input.classList.add("error");
-  //       input.insertAdjacentHTML('afterend', `<p class="error_message">This field is required.</p>`);
-  //     }
-  //     else {
-  //       input.parentNode.classList.add("error");
-  //       console.log(input.parentNode.querySelector('legend'));
-  //       input.parentNode.querySelector('legend').insertAdjacentHTML('beforeend', `<p class="error_message">This field is required.</p>`);
-  //     }
-  //   }
-  // })
+  submit_btn.addEventListener('click', event => {
+    event.preventDefault();
+
+    [...inputGroups].forEach(inputGroup => {
+      const inputValues = Array.from(inputGroup.querySelectorAll('input'), input => input.value);
+
+      if (inputValues.includes(""))
+        inputGroup.classList.add("error")
+       else
+        inputGroup.classList.remove("error")
+    })
+  })
 
 });
