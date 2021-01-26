@@ -1,8 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  //need to make this a module Form that gets imported into the main js file
-
+  //increases or decrease the number of people
   const people_count = document.getElementById("people");
   const counter_container = document.querySelector('.counter');
   let count = parseInt(people_count.value);
@@ -19,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
 
-
+//controls the checkmark next to the AM PM drop down list
   const ampmList = document.querySelector('.ampm__list');
   const ampmInput = document.getElementById('ampm_input');
 
@@ -32,15 +31,14 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
 
+//Validates the form and adds error class to fields that are not complete
   const inputGroups = document.querySelectorAll('.input-group');
   const submit_btn = document.querySelector('button[type="submit"]');
 
   submit_btn.addEventListener('click', event => {
     event.preventDefault();
-
     [...inputGroups].forEach(inputGroup => {
       const inputValues = Array.from(inputGroup.querySelectorAll('input'), input => input.value);
-
       if (inputValues.includes(""))
         inputGroup.classList.add("error")
        else

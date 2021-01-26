@@ -24,7 +24,7 @@
         </div>
 
     <section class="reservation">
-      <form id="booking" class="reservation__form brown-lines flow-content" action="book" method="post">
+      <form id="booking" class="reservation__form brown-lines flow-content-md" action="book" method="post">
 
         <div class="input-group flow-content-xsmall">
           <input type="text" name="name" id="name" placeholder="Name">
@@ -36,31 +36,39 @@
           <p class="error__message">This field is required.</p>
         </div>
 
-        <div class="input-group inline-input flow-content-xsmall ">
-          <legend>Pick a date
-            <p class="error__message">This field is incomplete.</p>
-          </legend>
-          <fieldset>
-            <input type="text" name="month" id="month" placeholder="MM">
-            <input type="text" name="day" id="day" placeholder="DD">
-            <input type="text" name="year" id="year" placeholder="YYYY">
+        <div class="input-group">
+          <fieldset role="group" aria-labelledby="heading" class="inline-input flow-content-xsmall">
+            <div>
+              <h4 class="fw-300">Pick a date</h4>
+              <p class="error__message">This field is incomplete.</p>
+            </div>
+
+            <div class="date_fields">
+              <input type="text" name="month" id="month" placeholder="MM">
+              <input type="text" name="day" id="day" placeholder="DD">
+              <input type="text" name="year" id="year" placeholder="YYYY">
+            </div>
           </fieldset>
         </div>
 
-        <div class="input-group inline-input flow-content-xsmall">
-          <legend>Pick a time
-            <p class="error__message">This field is incomplete.</p>
-          </legend>
-          <fieldset>
-            <input type="text" name="hour" id="hour" placeholder="09">
-            <input type="text" name="minute" id="day" placeholder="00">
-            <div class="ampm">
-              <input type="text" name="ampm" id="ampm_input" value="AM" readonly="true">
-              <img class="ampm__arrow" src="images/icons/icon-arrow.svg" alt="down arrow">
-              <ul class="ampm__list box-shadow">
-                <li class="selected">AM</li>
-                <li>PM</li>
-              </ul>
+        <div class="input-group">
+          <fieldset role="group" aria-labelledby="heading" class="inline-input flow-content-xsmall">
+            <div>
+              <h4 class="fw-300">Pick a time</h4>
+              <p class="error__message">This field is incomplete.</p>
+            </div>
+
+            <div class="date_fields">
+              <input type="text" name="hour" id="hour" placeholder="09">
+              <input type="text" name="minute" id="day" placeholder="00">
+              <div class="ampm">
+                <input type="text" name="ampm" id="ampm_input" value="AM" readonly="true">
+                <img class="ampm__arrow" src="images/icons/icon-arrow.svg" alt="down arrow">
+                <ul class="ampm__list box-shadow">
+                  <li class="selected">AM</li>
+                  <li>PM</li>
+                </ul>
+              </div>
             </div>
           </fieldset>
         </div>
@@ -87,8 +95,6 @@
           <p>Sat - Sun: 09:00 AM - 11:30 PM</p>
         </div>
       </footer>
-
-
 
     </div>
   </body>
