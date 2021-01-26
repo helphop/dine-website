@@ -408,6 +408,10 @@ a {
   text-transform: uppercase;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   max-width: 144rem;
   margin: 0 auto;
@@ -932,7 +936,7 @@ a {
 }
 @media only screen and (min-width: 75em) {
   .reservation__form {
-    --br-line-top: calc(3 * var(--padding-pages-vertical));
+    --br-line-top: calc(3.1 * var(--padding-pages-vertical));
     --br-line-left: -8rem;
     --br-line-z-index: -1;
     --br-line-display: block;
@@ -949,9 +953,6 @@ a {
 .reservation__form .input-group > .error__message {
   padding-left: 1rem;
 }
-.reservation__form ::placeholder {
-  color: var(--clr-error, var(--clr-primary-200-op50));
-}
 .reservation__form .error__message {
   font-size: var(--text-xxs);
   opacity: 0;
@@ -960,15 +961,18 @@ a {
 .reservation__form .error .error__message {
   opacity: 1;
 }
+.reservation__form ::placeholder {
+  color: var(--clr-error, var(--clr-primary-200-op50));
+}
 .reservation__form .inline-input {
   display: grid;
   grid-auto-flow: column;
-  column-gap: 1rem;
+  column-gap: 3rem;
+  align-items: center;
 }
 .reservation__form .inline-input .date_fields {
   display: grid;
   grid-auto-flow: column;
-  justify-content: space-between;
   grid-row: 2;
   gap: 2rem;
 }
@@ -978,10 +982,9 @@ a {
   }
 }
 .reservation__form .inline-input input {
-  max-width: 8rem;
   text-align: center;
 }
-.reservation__form .inline-input input#people {
+.reservation__form input#people {
   border-bottom: none;
   vertical-align: top;
   padding-right: 0;

@@ -70,6 +70,10 @@ a {
   text-transform: uppercase;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container {
   max-width: 144rem;
   margin: 0 auto;

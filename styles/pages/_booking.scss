@@ -52,7 +52,7 @@
     }
 
     @include respond(desktop) {
-    --br-line-top: calc(3 * var(--padding-pages-vertical));
+    --br-line-top: calc(3.1 * var(--padding-pages-vertical));
     --br-line-left: -8rem;
     --br-line-z-index: -1;
     --br-line-display: block;
@@ -72,9 +72,6 @@
     padding-left: 1rem;
     }
 
-    ::placeholder {
-      color: var(--clr-error, var(--clr-primary-200-op50));
-    }
     .error__message {
       font-size: var(--text-xxs);
       opacity: 0;
@@ -84,33 +81,37 @@
       opacity: 1;
     }
 
+    ::placeholder {
+      color: var(--clr-error, var(--clr-primary-200-op50));
+    }
+
     .inline-input {
      display: grid;
       grid-auto-flow: column;
-      column-gap: 1rem;
+      column-gap: 3rem;
+      align-items: center;
 
       .date_fields {
         display: grid;
          grid-auto-flow: column;
-         justify-content: space-between;
          grid-row: 2;
          gap: 2rem;
          @include respond(tab-land) {
            grid-row: 1
          }
       }
+
       input {
-        max-width: 8rem;
         text-align: center;
       }
+    }
 
-      input#people {
+    input#people {
          border-bottom: none;
         vertical-align: top;
         padding-right: 0;
         max-width: 3.7rem;
       }
-    }
 
     .counter {
       justify-content: space-between;
